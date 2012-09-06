@@ -43,7 +43,7 @@ Usage
 
 ### Basic
 
-The two principle interfaces in CocoaPort are the class CPPort and the protocol CPConnection. A CPConnection represents a connection between two CPPort instances. For an example of setting up two CPPorts connected via a CPSocketConnection, see Tutorial.
+The two principle interfaces in CocoaPort are the class CPPort and the protocol CPConnection. A CPConnection represents a connection between two CPPort instances. A CPPort is initialized with a CPConnection. Once two connected CPPorts are set up, they are able to exchange messages.
 
 Each CPPort instance has a property rootObject:
 
@@ -107,7 +107,7 @@ However, if a future is created by passing another future as an argument...
 	}
 
 
-## Obtaining futures
+### Obtaining futures
 
 Calling [CPPort remote] and sending messages to a future are two ways of getting futures. There are several others:
 
