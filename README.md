@@ -16,7 +16,9 @@ References to distant objects are treated differently. In Foundation's distribut
 	[employeeField setTextValue:[employee name]];
 
 
-Calling a method with a return value on a CocoaPort distant object returns immediately. The returned object is a future, representing the message invocation. This separates the act of constructing a remote method call from the act of invoking it, which (aside from other benefits), allows us to receive the result in an asynchronous callback instead of blocking, and makes it much more explicit when we're doing something that might have some latency:
+Calling a method with a return value on a CocoaPort distant object returns immediately. The returned object is a future, representing the message invocation. The method is not actually called until we resolve the future by sending it over the port.
+
+This separates the act of constructing a remote invocation from the act of invoking it, which (aside from other benefits), allows us to adapt methods with return values into methods that return via an asynchronous callback. It also makes it much more explicit when we're doing something that might have some latency:
 
 	// returns a future
 	employee = [self findEmployee];
@@ -26,21 +28,20 @@ Calling a method with a return value on a CocoaPort distant object returns immed
 	}];
 
 
-## Extensible transport methods
+### Extensible transport methods
 
 Although there are various NSConnection subclasses for different connection types, it is not extensible. CocoaPort currently defines one connection type --- CPSocketConnection --- which wraps an instance of GCDAsyncSocket. It would be quite straightforward to allow connections over XPC, http, Bluetooth, Mach ports, and so on, by creating new classes that conform to CPConnection.
 
-
-## Support for iOS
+### Support for iOS
 
 Not yet implemented, but there are deliberately no OS X-only dependencies. It will hopefuly be possible to communicate between Mac and iOS applications.
 
 
 
 Usage
-=====
+-----
 
-## Basic
+### Basic
 
 The two principle interfaces in CocoaPort are the class CPPort and the protocol CPConnection. A CPConnection represents a connection between two CPPort instances. For an example of setting up two CPPorts connected via a CPSocketConnection, see Tutorial.
 
@@ -114,7 +115,7 @@ Calling [CPPort remote] and sending messages to a future are two ways of getting
 
 - The methods describe so far are all initiated by the user of the future. When a method expects to receive af CPPort method [CPPort reference:] returns a proxy object allowing a reference to a local object to to passed to a remote method expecting a future.
 
-- If a remote object is observed using KVO (see below), changes can be sent as copies or references.
+- If a remote object is observed using KVO, changes can be sent as copies or references.
 
 
 Licence
