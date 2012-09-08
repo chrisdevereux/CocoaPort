@@ -1,0 +1,3 @@
+[submodule "External/CocoaAsyncSocket"]
+	path = External/CocoaAsyncSocket
+	url = https://github.com/chrisdevereux/CocoaAsyncSocket.git
