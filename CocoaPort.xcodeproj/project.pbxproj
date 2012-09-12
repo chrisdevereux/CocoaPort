@@ -351,7 +351,7 @@
 		61976FE3157CE9B000788469 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Chris Devereux";
 			};
 			buildConfigurationList = 61976FE6157CE9B000788469 /* Build configuration list for PBXProject "CocoaPort" */;
@@ -491,9 +491,11 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_EXTENSION = a;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Replica-cbzzlvzqtugqhhagebnfsmxetkce/Build/Products/Debug\"",
@@ -508,9 +510,11 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_EXTENSION = a;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Replica-cbzzlvzqtugqhhagebnfsmxetkce/Build/Products/Debug\"",
@@ -523,6 +527,7 @@
 		61977016157CE9B100788469 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
@@ -535,6 +540,7 @@
 		61977017157CE9B100788469 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";

@@ -19,6 +19,7 @@
 
 #import "CPSocketServer.h"
 #import "CPSocketConnection.h"
+#import "CocoaAsyncSocket/GCD/GCDAsyncSocket.h"
 
 @implementation CPSocketServer {
 	GCDAsyncSocket* _listenerSocket;

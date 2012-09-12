@@ -18,13 +18,13 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "GCDAsyncSocket.h"
+
 
 @class CPSocketConnection;
 @protocol CPSocketServerDelegate;
 
 
-@interface CPSocketServer : NSObject <GCDAsyncSocketDelegate>
+@interface CPSocketServer : NSObject
 
 @property (unsafe_unretained, nonatomic) id<CPSocketServerDelegate> delegate;
 @property (assign, readonly, nonatomic) uint16_t portNumber;

@@ -20,6 +20,8 @@
 #import "CPSocketConnection.h"
 #import "CPPort.h"
 #import "CPSocketMsg.h"
+#import "CocoaAsyncSocket/GCD/GCDAsyncSocket.h"
+
 
 enum {
 	kCPSocketReadHeader,

@@ -18,12 +18,11 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "CPConnection.h"
-#import "GCDAsyncSocket.h"
 
-
+@class GCDAsyncSocket;
 @protocol CPSocketConnectionDelegate;
 
-@interface CPSocketConnection : NSObject <CPConnection, GCDAsyncSocketDelegate>
+@interface CPSocketConnection : NSObject <CPConnection>
 
 @property (unsafe_unretained, nonatomic) id<CPSocketConnectionDelegate> delegate;
 
