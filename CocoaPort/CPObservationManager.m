@@ -72,6 +72,9 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
 
 - (void) addObserverForObject:(id)object keyPath:(NSString *)keypath uid:(NSData *)uid usingBlock:(void(^)(id change))block
 {
+    if (!object)
+        return;
+    
 	CPObservationInfo* info = [[CPObservationInfo alloc] init];
 	info.observedObject = object;
 	info.observedKeypath = keypath;
@@ -90,11 +93,14 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
 
 - (void) removeObserverWithUID:(NSData *)uid
 {
+    if (!uid)
+        return;
+    
 	@synchronized(self){
 		CPObservationInfo* info = [_uidMapped objectForKey:uid];
-		if (!uid)
-			return;
-		
+		if (!info)
+            return;
+        
 		[info.observedObject removeObserver:self forKeyPath:info.observedKeypath];
 		
 		[_objectKeypathMapped removeObjectForKey:KeyForObjectAndKeypath(info.observedObject, info.observedKeypath)];

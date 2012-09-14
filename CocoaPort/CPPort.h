@@ -71,8 +71,12 @@ typedef void(^CPResponseHandler)(id response, NSError* error);
 - (id) remote;
 
 /**
- Returns a CPFuture refering to _localObject_, suitable for passing references to local
+ Returns a proxy refering to _localObject_, suitable for passing references to local
  objects as arguments to remote invocations.
+ 
+ @important
+ Care must be taken if the proxy is stored, as it can only be treated as reference to
+ _localObject_ if it is sent over the port.
 */
 - (id) reference:(id)localObject;
 

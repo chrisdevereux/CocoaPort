@@ -22,6 +22,7 @@
 #import "CPPort.h"
 #import "CPRetainReleaseMessage.h"
 #import "CPEvaluable.h"
+#import "CPNilPlaceholder.h"
 #import <objc/runtime.h>
 
 #pragma mark - Method prototypes:
@@ -102,7 +103,7 @@ static NSArray* methodSignatures;
 	for (NSUInteger i = 0 ; i < numArgs; i++) {
 		__unsafe_unretained id a;
 		[invocation getArgument:&a atIndex:i + 2];
-		[args addObject:a];
+		[args addObject:a ?: [CPNilPlaceholder nilPlaceholder]];
 	}
 	
 	CPInvocationFuture* future = [CPInvocationFuture futureWithPort:_port 
@@ -285,6 +286,10 @@ static NSArray* methodSignatures;
 					 
 id<CPEvaluable> CPConvertFutureExpressionToEvaluable(id object)
 {
+    if (!object) {
+        return [CPNilPlaceholder nilPlaceholder];
+    }
+    
 	Class cls = object_getClass(object);
 	Class metaclass = object_getClass(cls);
 	

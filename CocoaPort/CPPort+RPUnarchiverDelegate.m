@@ -30,6 +30,7 @@
 		[object release];
 		return [replacement retain];
 	}
+    
 	return object;
 }
 
