@@ -19,6 +19,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CPSentProxy : NSObject <NSCoding>
+@interface CPSentReferencePlaceholder : NSObject <NSCoding>
 @property (strong, nonatomic) NSData* ref;
 @end

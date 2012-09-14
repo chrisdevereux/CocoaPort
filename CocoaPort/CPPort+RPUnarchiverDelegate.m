@@ -19,13 +19,13 @@
 
 #import "CPPort+RPUnarchiverDelegate.h"
 #import "CPFuture.h"
-#import "CPSendableProxy.h"
+#import "CPSentReferencePlaceholder.h"
 
 @implementation CPPort (RPUnarchiverDelegate)
 
-- (id) unarchiver:(NSKeyedUnarchiver *)unarchiver didDecodeObject:(CPSentProxy*)object NS_RETURNS_RETAINED
+- (id) unarchiver:(NSKeyedUnarchiver *)unarchiver didDecodeObject:(CPSentReferencePlaceholder*)object NS_RETURNS_RETAINED
 {
-	if ([object isKindOfClass:[CPSentProxy class]]) {
+	if ([object isKindOfClass:[CPSentReferencePlaceholder class]]) {
 		id replacement = [CPRemoteReferenceFuture futureWithPort:self target:[object ref]];
 		[object release];
 		return [replacement retain];

@@ -18,8 +18,8 @@
 		6156B07C15FC0C3B00F26BAC /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6156B07A15FC0C3B00F26BAC /* GCDAsyncSocket.m */; };
 		618699CB15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699C915C75A62008BBD84 /* CPPort+RPUnarchiverDelegate.h */; };
 		618699CC15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		618699D015C75BFD008BBD84 /* CPSendableProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699CE15C75BFC008BBD84 /* CPSendableProxy.h */; };
-		618699D115C75BFD008BBD84 /* CPSendableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CF15C75BFC008BBD84 /* CPSendableProxy.m */; };
+		618699D015C75BFD008BBD84 /* CPSentReferencePlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */; };
+		618699D115C75BFD008BBD84 /* CPSentReferencePlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */; };
 		61977002157CE9B000788469 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61977001157CE9B000788469 /* SenTestingKit.framework */; };
 		61977006157CE9B000788469 /* libCocoaPort-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */; };
 		6197702C157CF56F00788469 /* CPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197702A157CF56F00788469 /* CPConnection.h */; };
@@ -70,8 +70,8 @@
 		6156B07A15FC0C3B00F26BAC /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = External/CocoaAsyncSocket/GCD/GCDAsyncSocket.m; sourceTree = SOURCE_ROOT; };
 		618699C915C75A62008BBD84 /* CPPort+RPUnarchiverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPPort+RPUnarchiverDelegate.h"; sourceTree = "<group>"; };
 		618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPPort+RPUnarchiverDelegate.m"; sourceTree = "<group>"; };
-		618699CE15C75BFC008BBD84 /* CPSendableProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSendableProxy.h; sourceTree = "<group>"; };
-		618699CF15C75BFC008BBD84 /* CPSendableProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSendableProxy.m; sourceTree = "<group>"; };
+		618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSentReferencePlaceholder.h; sourceTree = "<group>"; };
+		618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSentReferencePlaceholder.m; sourceTree = "<group>"; };
 		61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocoaPort-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61976FEF157CE9B000788469 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		61976FF2157CE9B000788469 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -264,8 +264,8 @@
 			children = (
 				618699C915C75A62008BBD84 /* CPPort+RPUnarchiverDelegate.h */,
 				618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */,
-				618699CE15C75BFC008BBD84 /* CPSendableProxy.h */,
-				618699CF15C75BFC008BBD84 /* CPSendableProxy.m */,
+				618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */,
+				618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */,
 				6105E7591602C6F500D0E8DA /* CPNilPlaceholder.h */,
 				6105E75A1602C6F500D0E8DA /* CPNilPlaceholder.m */,
 			);
@@ -301,7 +301,7 @@
 				619843D8157E8499005A66F6 /* CPResponseMessage.h in Headers */,
 				614AEE87157FD02F00E7526B /* CocoaPort.h in Headers */,
 				618699CB15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.h in Headers */,
-				618699D015C75BFD008BBD84 /* CPSendableProxy.h in Headers */,
+				618699D015C75BFD008BBD84 /* CPSentReferencePlaceholder.h in Headers */,
 				61329DCF15F176BA00E5E43C /* CPSocketConnection.h in Headers */,
 				61329DD715F19F3800E5E43C /* CPSocketServer.h in Headers */,
 				619FE8DF15F23DAA003FF849 /* CPCodingObject.h in Headers */,
@@ -417,7 +417,7 @@
 				619843C8157E487F005A66F6 /* CPRetainReleaseMessage.m in Sources */,
 				619843D9157E8499005A66F6 /* CPResponseMessage.m in Sources */,
 				618699CC15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m in Sources */,
-				618699D115C75BFD008BBD84 /* CPSendableProxy.m in Sources */,
+				618699D115C75BFD008BBD84 /* CPSentReferencePlaceholder.m in Sources */,
 				61329DD015F176BA00E5E43C /* CPSocketConnection.m in Sources */,
 				61329DD815F19F3800E5E43C /* CPSocketServer.m in Sources */,
 				619FE8E015F23DAA003FF849 /* CPCodingObject.m in Sources */,

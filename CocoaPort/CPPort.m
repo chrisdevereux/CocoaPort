@@ -27,7 +27,7 @@
 #import "CPObservationManager.h"
 
 #import "CPFuture.h"
-#import "CPSendableProxy.h"
+#import "CPSentReferencePlaceholder.h"
 
 #import <objc/runtime.h>
 
@@ -182,7 +182,7 @@
 
 - (id) reference:(id)localObject
 {
-	CPSentProxy* proxy = [[CPSentProxy alloc] init];
+	CPSentReferencePlaceholder* proxy = [[CPSentReferencePlaceholder alloc] init];
 	proxy.ref = [self retainingHandleForObject:localObject];
 	return proxy;
 }
