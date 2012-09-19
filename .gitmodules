@@ -1,3 +1,6 @@
 [submodule "External/CocoaAsyncSocket"]
 	path = External/CocoaAsyncSocket
 	url = https://github.com/chrisdevereux/CocoaAsyncSocket.git
+[submodule "External/nstool"]
+	path = External/nstool
+	url = https://github.com/chrisdevereux/nstool.git

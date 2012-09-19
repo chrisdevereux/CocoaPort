@@ -51,6 +51,10 @@
 @end
 
 
+@interface CPNilFuture : CPFuture
+@end
+
+
 @interface CPClassReferenceFuture : CPFuture
 + (id) futureWithPort:(CPPort *)port className:(id)className;
 @end

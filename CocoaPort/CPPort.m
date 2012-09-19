@@ -67,7 +67,7 @@
 	self = [super init];
 	if (!self)
 		return nil;
-	
+    
 	_queue = queue ?: dispatch_get_current_queue();
 	dispatch_retain(_queue);
 	

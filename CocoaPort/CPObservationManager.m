@@ -62,11 +62,15 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
 
 - (void) removeAllObservers
 {
+    NSArray* observed;
+    
 	@synchronized(self){
-		[_objectKeypathMapped enumerateKeysAndObjectsUsingBlock:^(id key, CPObservationInfo* info, BOOL *stop) {
-			[info.observedObject removeObserver:self forKeyPath:info.observedKeypath];
-		}];
+        observed = [_objectKeypathMapped allValues];
 	}
+    
+    for (CPObservationInfo* info in observed) {
+        [info.observedObject removeObserver:self forKeyPath:info.observedKeypath];
+    }
 }
 
 
@@ -84,10 +88,10 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
 	@synchronized(self){
 		[_objectKeypathMapped setObject:info forKey:KeyForObjectAndKeypath(object, keypath)];
 		[_uidMapped setObject:info forKey:uid];
-		
-		NSKeyValueObservingOptions opts = NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew;
-		[object addObserver:self forKeyPath:keypath options:opts context:(__bridge void*)self];
 	}
+		
+    NSKeyValueObservingOptions opts = NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew;
+    [object addObserver:self forKeyPath:keypath options:opts context:(__bridge void*)self];
 }
 
 
@@ -96,16 +100,19 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
     if (!uid)
         return;
     
+    CPObservationInfo* info;
+    
 	@synchronized(self){
-		CPObservationInfo* info = [_uidMapped objectForKey:uid];
-		if (!info)
+		info = [_uidMapped objectForKey:uid];
+        
+        if (!info)
             return;
         
-		[info.observedObject removeObserver:self forKeyPath:info.observedKeypath];
-		
-		[_objectKeypathMapped removeObjectForKey:KeyForObjectAndKeypath(info.observedObject, info.observedKeypath)];
-		[_uidMapped removeObjectForKey:info.uid];
-	}
+        [_objectKeypathMapped removeObjectForKey:KeyForObjectAndKeypath(info.observedObject, info.observedKeypath)];
+        [_uidMapped removeObjectForKey:info.uid];
+    }
+    
+    [info.observedObject removeObserver:self forKeyPath:info.observedKeypath];
 }
 
 
@@ -115,14 +122,17 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 		return;
 	}
+    
+    CPObservationInfo* info;
 	
 	@synchronized(self){
-		CPObservationInfo* info = [_objectKeypathMapped objectForKey:KeyForObjectAndKeypath(object, keyPath)];
+		info = [_objectKeypathMapped objectForKey:KeyForObjectAndKeypath(object, keyPath)];
+        
 		if (!info)
 			return;
-		
-		info.changeBlock([change objectForKey:NSKeyValueChangeNewKey]);
 	}
+
+    info.changeBlock([change objectForKey:NSKeyValueChangeNewKey]);
 }
 
 @end

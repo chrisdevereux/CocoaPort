@@ -1,3 +1,6 @@
+NAMESPACE
+CocoaPort/CPNamespace-MacOS.h
+CocoaPort/CPNamespace-iOS.h
 .DS_Store
 build/
 *.pbxuser

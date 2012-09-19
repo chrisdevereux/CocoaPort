@@ -18,7 +18,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <CocoaPort/CPNamespace.h>
+#import <CocoaPort/CPNamespace-MacOS.h>
 
 #import <CocoaPort/CPConnection.h>
 #import <CocoaPort/CPPortMessage.h>

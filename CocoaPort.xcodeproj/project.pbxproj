@@ -31,7 +31,6 @@
 		61977054157D675B00788469 /* CPEvaluable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197703E157D2BE600788469 /* CPEvaluable.h */; };
 		61977057157D67B000788469 /* CPPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 61977055157D67B000788469 /* CPPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61977058157D67B000788469 /* CPPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 61977056157D67B000788469 /* CPPort.m */; };
-		6197705E157D9A0E00788469 /* CPNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 61976FF9157CE9B000788469 /* CPNamespace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61977062157D9BF900788469 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FF4157CE9B000788469 /* Foundation.framework */; };
 		619843C7157E487F005A66F6 /* CPRetainReleaseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 619843C5157E487F005A66F6 /* CPRetainReleaseMessage.h */; };
 		619843C8157E487F005A66F6 /* CPRetainReleaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 619843C6157E487F005A66F6 /* CPRetainReleaseMessage.m */; };
@@ -45,6 +44,7 @@
 		619E8C7315F6A0FA00AFA249 /* CPReferenceMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */; };
 		619FE8DF15F23DAA003FF849 /* CPCodingObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 619FE8DD15F23DAA003FF849 /* CPCodingObject.h */; };
 		619FE8E015F23DAA003FF849 /* CPCodingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 619FE8DE15F23DAA003FF849 /* CPCodingObject.m */; };
+		61FE792F160A177200C5E23E /* CPNamespace-MacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 61FE792E160A177200C5E23E /* CPNamespace-MacOS.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		61976FF4157CE9B000788469 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		61976FF7157CE9B000788469 /* CocoaPort-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPort-Prefix.pch"; sourceTree = "<group>"; };
 		61976FF8157CE9B000788469 /* CocoaPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPort.h; sourceTree = "<group>"; };
-		61976FF9157CE9B000788469 /* CPNamespace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPNamespace.h; sourceTree = "<group>"; };
 		61977000157CE9B000788469 /* CocoaPortTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPortTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61977001157CE9B000788469 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6197702A157CF56F00788469 /* CPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPConnection.h; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPReferenceMap.m; sourceTree = "<group>"; };
 		619FE8DD15F23DAA003FF849 /* CPCodingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCodingObject.h; sourceTree = "<group>"; };
 		619FE8DE15F23DAA003FF849 /* CPCodingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCodingObject.m; sourceTree = "<group>"; };
+		61FE792E160A177200C5E23E /* CPNamespace-MacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPNamespace-MacOS.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,11 +250,11 @@
 		61977048157D325300788469 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				61976FF9157CE9B000788469 /* CPNamespace.h */,
 				619FE8DD15F23DAA003FF849 /* CPCodingObject.h */,
 				619FE8DE15F23DAA003FF849 /* CPCodingObject.m */,
 				619E8C7015F6A0FA00AFA249 /* CPReferenceMap.h */,
 				619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */,
+				61FE792E160A177200C5E23E /* CPNamespace-MacOS.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -296,7 +296,6 @@
 				61977042157D2C7100788469 /* CPRemoteInvocation.h in Headers */,
 				61977054157D675B00788469 /* CPEvaluable.h in Headers */,
 				61977057157D67B000788469 /* CPPort.h in Headers */,
-				6197705E157D9A0E00788469 /* CPNamespace.h in Headers */,
 				619843C7157E487F005A66F6 /* CPRetainReleaseMessage.h in Headers */,
 				619843D8157E8499005A66F6 /* CPResponseMessage.h in Headers */,
 				614AEE87157FD02F00E7526B /* CocoaPort.h in Headers */,
@@ -310,6 +309,7 @@
 				619E8C7215F6A0FA00AFA249 /* CPReferenceMap.h in Headers */,
 				6156B07B15FC0C3B00F26BAC /* GCDAsyncSocket.h in Headers */,
 				6105E75B1602C6F600D0E8DA /* CPNilPlaceholder.h in Headers */,
+				61FE792F160A177200C5E23E /* CPNamespace-MacOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61977012157CE9B100788469 /* Build configuration list for PBXNativeTarget "CocoaPort-MacOS" */;
 			buildPhases = (
+				61DC144F16097D5F0043DC8C /* ShellScript */,
 				61976FE8157CE9B000788469 /* Sources */,
 				61976FE9157CE9B000788469 /* Frameworks */,
 				61976FEA157CE9B000788469 /* Headers */,
@@ -402,6 +403,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		61DC144F16097D5F0043DC8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/ruby;
+			shellScript = "# Check if a NAMESPACE file exists at project root, and configure namespace macros accordingly\n\nproject_dir     = ENV[\"PROJECT_DIR\"]\nbinary          = File.join(ENV[\"BUILT_PRODUCTS_DIR\"], ENV[\"FULL_PRODUCT_NAME\"])\n\nnamespace_def   = File.join(project_dir, \"NAMESPACE\")\ntarget_header   = File.join(project_dir, \"CocoaPort\", \"CPNamespace-MacOS.h\")\nnstool          = File.join(project_dir, \"External\", \"nstool\", \"nstool.rb\")\nplaceholder     = \"// Placeholder for namespacing macros. Add a NAMESPACE file to the project root to enable namespacing.\"\n\ndef write_once(file, string)\n    puts string\n    if !File.exist?(file) || File.read(file) != string then\n        File.open(file,'w'){|f| f.write string}\n    end\nend\n\nif File.exist?(namespace_def) then\n    puts \"#{nstool} #{binary} #{File.read(namespace_def)} NS\"\n    write_once(target_header, `#{nstool} #{binary} #{File.read(namespace_def).strip} \"NS\"`)\nelse\n    write_once(target_header, placeholder)\nend";
 		};
 /* End PBXShellScriptBuildPhase section */
 

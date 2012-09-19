@@ -103,7 +103,7 @@ static NSArray* methodSignatures;
 	for (NSUInteger i = 0 ; i < numArgs; i++) {
 		__unsafe_unretained id a;
 		[invocation getArgument:&a atIndex:i + 2];
-		[args addObject:a ?: [CPNilPlaceholder nilPlaceholder]];
+		[args addObject:a ?: [CPNilFuture futureWithPort:_port]];
 	}
 	
 	CPInvocationFuture* future = [CPInvocationFuture futureWithPort:_port 
@@ -277,6 +277,15 @@ static NSArray* methodSignatures;
 @end
 
 
+@implementation CPNilFuture
+
++ (id<CPEvaluable>) convertFutureToInvocationExpression:(CPNilFuture *)future
+{
+    return [CPNilPlaceholder nilPlaceholder];
+}
+
+@end
+
 
 // When when we convert the future proxies into the actual expression objects we're going to send,
 // we want polymorphism to deal with the different types, but can't really define a 'convert' instance
@@ -286,10 +295,6 @@ static NSArray* methodSignatures;
 					 
 id<CPEvaluable> CPConvertFutureExpressionToEvaluable(id object)
 {
-    if (!object) {
-        return [CPNilPlaceholder nilPlaceholder];
-    }
-    
 	Class cls = object_getClass(object);
 	Class metaclass = object_getClass(cls);
 	
