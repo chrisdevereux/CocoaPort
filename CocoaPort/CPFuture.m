@@ -65,6 +65,12 @@ static NSArray* methodSignatures;
 @end
 
 
+static BOOL IsRetainingSelector(SEL selector)
+{
+    const char* selName = sel_getName(selector);
+    return (memcmp("copy", selName, 4) == 0 || memcmp("init", selName, 4) == 0 || memcmp("alloc", selName, 5) == 0);
+}
+
 
 #pragma mark - Message forwarding:
 
@@ -110,6 +116,12 @@ static NSArray* methodSignatures;
 													   targetExpression:self
 															   selector:[invocation selector] 
 																   args:args];
+    if (IsRetainingSelector([invocation selector])) {
+        if (future) {
+            CFRetain((__bridge void*)future);
+        }
+    }
+    
 	[invocation setReturnValue:&future];
 }
 
@@ -240,10 +252,22 @@ static NSArray* methodSignatures;
 	}
 	
 	[invocation invokeWithTarget:_local];
+    
 	id returnValue;
 	[invocation getReturnValue:&returnValue];
-	returnValue = [CPLocalObjectReferenceFuture futureWithPort:_port localObject:returnValue];
-	[invocation setReturnValue:&returnValue];
+    
+	id replacementReturnValue = [CPLocalObjectReferenceFuture futureWithPort:_port localObject:returnValue];
+    
+    if (IsRetainingSelector([invocation selector])) {
+        if (returnValue) {
+            CFRelease((__bridge void*) returnValue);
+        }
+        if (replacementReturnValue) {
+            CFRetain((__bridge void*) replacementReturnValue);
+        }
+    }
+    
+	[invocation setReturnValue:&replacementReturnValue];
 }
 
 @end
