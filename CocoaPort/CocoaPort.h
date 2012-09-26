@@ -18,7 +18,12 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+
+#if TARGET_OS_IPHONE
+#import <CocoaPort/CPNamespace-iOS.h>
+#else
 #import <CocoaPort/CPNamespace-MacOS.h>
+#endif
 
 #import <CocoaPort/CPConnection.h>
 #import <CocoaPort/CPPortMessage.h>
