@@ -414,8 +414,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/bin/ruby;
-			shellScript = "# Check if a NAMESPACE file exists at project root, and configure namespace macros accordingly\n\nproject_dir     = ENV[\"PROJECT_DIR\"]\nbinary          = File.join(ENV[\"BUILT_PRODUCTS_DIR\"], ENV[\"FULL_PRODUCT_NAME\"])\n\nnamespace_def   = File.join(project_dir, \"NAMESPACE\")\ntarget_header   = File.join(project_dir, \"CocoaPort\", \"CPNamespace-MacOS.h\")\nnstool          = File.join(project_dir, \"External\", \"nstool\", \"nstool.rb\")\nplaceholder     = \"// Placeholder for namespacing macros. Add a NAMESPACE file to the project root to enable namespacing.\"\n\ndef write_once(file, string)\n    puts string\n    if !File.exist?(file) || File.read(file) != string then\n        File.open(file,'w'){|f| f.write string}\n    end\nend\n\nif File.exist?(namespace_def) then\n    puts \"#{nstool} #{binary} #{File.read(namespace_def)} NS\"\n    write_once(target_header, `#{nstool} #{binary} #{File.read(namespace_def).strip} \"NS\"`)\nelse\n    write_once(target_header, placeholder)\nend";
+			shellPath = /bin/sh;
+			shellScript = "ruby External/nstool/add_to_namespace.rb CocoaPort/CPNamespace-MacOS.h NS";
 		};
 /* End PBXShellScriptBuildPhase section */
 
