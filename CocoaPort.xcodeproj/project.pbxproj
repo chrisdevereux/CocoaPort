@@ -16,6 +16,12 @@
 		614AEE87157FD02F00E7526B /* CocoaPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 61976FF8157CE9B000788469 /* CocoaPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6156B07B15FC0C3B00F26BAC /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6156B07915FC0C3B00F26BAC /* GCDAsyncSocket.h */; };
 		6156B07C15FC0C3B00F26BAC /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6156B07A15FC0C3B00F26BAC /* GCDAsyncSocket.m */; };
+		61827B8D1614B197006FAA09 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 61827B8B1614B197006FAA09 /* DDLog.h */; };
+		61827B8E1614B197006FAA09 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 61827B8C1614B197006FAA09 /* DDLog.m */; };
+		61827B8F1614B1AE006FAA09 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 61827B8C1614B197006FAA09 /* DDLog.m */; };
+		61827B921614C0A2006FAA09 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 61827B901614C0A2006FAA09 /* DDTTYLogger.h */; };
+		61827B931614C0A2006FAA09 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 61827B911614C0A2006FAA09 /* DDTTYLogger.m */; };
+		61827B941614C0A2006FAA09 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 61827B911614C0A2006FAA09 /* DDTTYLogger.m */; };
 		618699CB15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699C915C75A62008BBD84 /* CPPort+RPUnarchiverDelegate.h */; };
 		618699CC15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		618699D015C75BFD008BBD84 /* CPSentReferencePlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */; };
@@ -98,6 +104,10 @@
 		61329DD615F19F3800E5E43C /* CPSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSocketServer.m; sourceTree = "<group>"; };
 		6156B07915FC0C3B00F26BAC /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = External/CocoaAsyncSocket/GCD/GCDAsyncSocket.h; sourceTree = SOURCE_ROOT; };
 		6156B07A15FC0C3B00F26BAC /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = External/CocoaAsyncSocket/GCD/GCDAsyncSocket.m; sourceTree = SOURCE_ROOT; };
+		61827B8B1614B197006FAA09 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = External/CocoaAsyncSocket/Vendor/CocoaLumberjack/DDLog.h; sourceTree = SOURCE_ROOT; };
+		61827B8C1614B197006FAA09 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = External/CocoaAsyncSocket/Vendor/CocoaLumberjack/DDLog.m; sourceTree = SOURCE_ROOT; };
+		61827B901614C0A2006FAA09 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = External/CocoaAsyncSocket/Vendor/CocoaLumberjack/DDTTYLogger.h; sourceTree = SOURCE_ROOT; };
+		61827B911614C0A2006FAA09 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = External/CocoaAsyncSocket/Vendor/CocoaLumberjack/DDTTYLogger.m; sourceTree = SOURCE_ROOT; };
 		618699C915C75A62008BBD84 /* CPPort+RPUnarchiverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPPort+RPUnarchiverDelegate.h"; sourceTree = "<group>"; };
 		618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPPort+RPUnarchiverDelegate.m"; sourceTree = "<group>"; };
 		618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSentReferencePlaceholder.h; sourceTree = "<group>"; };
@@ -136,6 +146,9 @@
 		61FCB6E016130C990056B5A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		61FCB6E416130C990056B5A4 /* CocoaPort-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPort-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		61FCB6FD16130E6D0056B5A4 /* CPNamespace-iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPNamespace-iOS.h"; sourceTree = "<group>"; };
+		61FCB807161321470056B5A4 /* Replica-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Replica-iOS-Prefix.pch"; sourceTree = "<group>"; };
+		61FCB808161321470056B5A4 /* Replica_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Replica_iOS.h; sourceTree = "<group>"; };
+		61FCB80A161321470056B5A4 /* Replica_iOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Replica_iOS.m; sourceTree = "<group>"; };
 		61FE792E160A177200C5E23E /* CPNamespace-MacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPNamespace-MacOS.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +220,7 @@
 			children = (
 				61976FF5157CE9B000788469 /* CocoaPort */,
 				61FCB6E216130C990056B5A4 /* CocoaPort-iOS */,
+				61FCB805161321460056B5A4 /* Replica-iOS */,
 				61976FEE157CE9B000788469 /* Frameworks */,
 				61976FED157CE9B000788469 /* Products */,
 			);
@@ -273,6 +287,10 @@
 			children = (
 				6156B07915FC0C3B00F26BAC /* GCDAsyncSocket.h */,
 				6156B07A15FC0C3B00F26BAC /* GCDAsyncSocket.m */,
+				61827B8B1614B197006FAA09 /* DDLog.h */,
+				61827B8C1614B197006FAA09 /* DDLog.m */,
+				61827B901614C0A2006FAA09 /* DDTTYLogger.h */,
+				61827B911614C0A2006FAA09 /* DDTTYLogger.m */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -346,6 +364,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		61FCB805161321460056B5A4 /* Replica-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				61FCB808161321470056B5A4 /* Replica_iOS.h */,
+				61FCB80A161321470056B5A4 /* Replica_iOS.m */,
+				61FCB806161321470056B5A4 /* Supporting Files */,
+			);
+			path = "Replica-iOS";
+			sourceTree = "<group>";
+		};
+		61FCB806161321470056B5A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				61FCB807161321470056B5A4 /* Replica-iOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -373,6 +409,8 @@
 				6105E75B1602C6F600D0E8DA /* CPNilPlaceholder.h in Headers */,
 				61FE792F160A177200C5E23E /* CPNamespace-MacOS.h in Headers */,
 				61FCB6FE16130E6D0056B5A4 /* CPNamespace-iOS.h in Headers */,
+				61827B8D1614B197006FAA09 /* DDLog.h in Headers */,
+				61827B921614C0A2006FAA09 /* DDTTYLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +573,8 @@
 				619E8C7315F6A0FA00AFA249 /* CPReferenceMap.m in Sources */,
 				6156B07C15FC0C3B00F26BAC /* GCDAsyncSocket.m in Sources */,
 				6105E75C1602C6F600D0E8DA /* CPNilPlaceholder.m in Sources */,
+				61827B8E1614B197006FAA09 /* DDLog.m in Sources */,
+				61827B931614C0A2006FAA09 /* DDTTYLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +605,8 @@
 				61FCB6FA16130DEC0056B5A4 /* CPCodingObject.m in Sources */,
 				61FCB6FB16130DEC0056B5A4 /* CPReferenceMap.m in Sources */,
 				61FCB6FC16130DEC0056B5A4 /* GCDAsyncSocket.m in Sources */,
+				61827B8F1614B1AE006FAA09 /* DDLog.m in Sources */,
+				61827B941614C0A2006FAA09 /* DDTTYLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +642,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/External/CocoaPort/External/CocoaAsyncSocket/Vendor/CocoaLumberjack/",
+					"$(PROJECT_DIR)/External",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -621,6 +667,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/External/CocoaPort/External/CocoaAsyncSocket/Vendor/CocoaLumberjack/",
+					"$(PROJECT_DIR)/External",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
@@ -635,11 +685,6 @@
 				EXECUTABLE_EXTENSION = a;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Replica-cbzzlvzqtugqhhagebnfsmxetkce/Build/Products/Debug\"",
-				);
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -654,11 +699,6 @@
 				EXECUTABLE_EXTENSION = a;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Replica-cbzzlvzqtugqhhagebnfsmxetkce/Build/Products/Debug\"",
-				);
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -701,7 +741,6 @@
 				DSTROOT = /tmp/CocoaPort_iOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort-iOS/CocoaPort-iOS-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -723,7 +762,6 @@
 				DSTROOT = /tmp/CocoaPort_iOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPort-iOS/CocoaPort-iOS-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -771,6 +809,7 @@
 				61FCB6EB16130C990056B5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

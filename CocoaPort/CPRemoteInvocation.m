@@ -70,7 +70,6 @@
 	
 	CPResponseMessage* msg = [[CPResponseMessage alloc] initWithValue:result isCopy:_isCopy error:nil handlerID:_handlerId];
 	[port sendPortMessage:msg];
-		
 }
 
 @end

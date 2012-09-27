@@ -21,7 +21,8 @@
 #import "CPPort.h"
 #import "CPSocketMsg.h"
 #import "CocoaAsyncSocket/GCD/GCDAsyncSocket.h"
-
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 enum {
 	kCPSocketReadHeader,
@@ -56,6 +57,16 @@ enum {
 		uint8_t closed :1;
 	} _miscFlags;
 }
+
+
+#ifdef DEBUG
+
++ (void) initialize
+{
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+}
+
+#endif
 
 - (id) init
 {

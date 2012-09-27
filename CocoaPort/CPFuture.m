@@ -155,7 +155,7 @@ static BOOL IsRetainingSelector(SEL selector)
 
 - (void) dealloc
 {
-	[_port sendPortMessage:[[CPReleaseReference alloc] initWithID:_target]];
+    [CPReleaseReference releaseRemoteObjectWithID:_target viaPort:_port];
 }
 
 + (id<CPEvaluable>) convertFutureToInvocationExpression:(CPRemoteReferenceFuture *)future
