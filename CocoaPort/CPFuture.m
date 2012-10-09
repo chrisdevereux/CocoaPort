@@ -23,6 +23,7 @@
 #import "CPRetainReleaseMessage.h"
 #import "CPEvaluable.h"
 #import "CPNilPlaceholder.h"
+#import "CPUtilities.h"
 #import <objc/runtime.h>
 
 #pragma mark - Method prototypes:
@@ -65,13 +66,6 @@ static NSArray* methodSignatures;
 @end
 
 
-static BOOL IsRetainingSelector(SEL selector)
-{
-    const char* selName = sel_getName(selector);
-    return (memcmp("copy", selName, 4) == 0 || memcmp("init", selName, 4) == 0 || memcmp("alloc", selName, 5) == 0);
-}
-
-
 #pragma mark - Message forwarding:
 
 @implementation CPFuture {
@@ -111,12 +105,17 @@ static BOOL IsRetainingSelector(SEL selector)
 		[invocation getArgument:&a atIndex:i + 2];
 		[args addObject:a ?: [CPNilFuture futureWithPort:_port]];
 	}
+    
+    NSString* selName = NSStringFromSelector([invocation selector]);
 	
-	CPInvocationFuture* future = [CPInvocationFuture futureWithPort:_port 
-													   targetExpression:self
-															   selector:[invocation selector] 
-																   args:args];
-    if (IsRetainingSelector([invocation selector])) {
+	CPInvocationFuture* future = [CPInvocationFuture futureWithPort:_port
+                                                   targetExpression:self
+                                                       selectorName:selName
+                                                               args:args];
+    if (CPIsRetainingSelectorName(selName)) {
+        // Manual retain / release is needed here, otherwise when the caller
+        // releases the future (as it should due to method name), refcount will be -1
+        
         if (future) {
             CFRetain((__bridge void*)future);
         }
@@ -176,11 +175,11 @@ static BOOL IsRetainingSelector(SEL selector)
 	id _targetExpr;
 }
 
-+ (id) futureWithPort:(CPPort*)port targetExpression:(id)target selector:(SEL)selector args:(NSArray*)args
++ (id) futureWithPort:(CPPort*)port targetExpression:(id)target selectorName:(NSString*)selectorName args:(NSArray*)args
 {
 	CPInvocationFuture* future = [super futureWithPort:port];
 	future->_args = args;
-	future->_sel = NSStringFromSelector(selector);
+	future->_sel = selectorName;
 	future->_targetExpr = target;
 	return future;
 }
@@ -258,7 +257,12 @@ static BOOL IsRetainingSelector(SEL selector)
     
 	id replacementReturnValue = [CPLocalObjectReferenceFuture futureWithPort:_port localObject:returnValue];
     
-    if (IsRetainingSelector([invocation selector])) {
+    if (CPIsRetainingSelectorName(NSStringFromSelector([invocation selector]))) {
+        // ARC Can't see inside the invocation.
+        //
+        // Manual retain / release is needed here, otherwise the replacement return value
+        // is over-released and the future is leaked.
+        
         if (returnValue) {
             CFRelease((__bridge void*) returnValue);
         }
@@ -268,34 +272,6 @@ static BOOL IsRetainingSelector(SEL selector)
     }
     
 	[invocation setReturnValue:&replacementReturnValue];
-}
-
-@end
-
-
-@implementation CPClassReferenceFuture {
-@protected
-	NSString* _name;
-}
-
-+ (id) futureWithPort:(CPPort *)port className:(id)className
-{
-	CPClassReferenceFuture* future = [super futureWithPort:port];
-	if (!future)
-		return nil;
-	
-	future->_name = className;
-	return future;
-}
-
-+ (id<CPEvaluable>) convertFutureToInvocationExpression:(CPClassReferenceFuture *)future
-{
-	CPClassRef* ref = [CPClassRef new];
-	if (!ref)
-		return nil;
-	
-	ref->_name = future->_name;
-	return ref;
 }
 
 @end

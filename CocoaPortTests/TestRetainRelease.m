@@ -35,21 +35,12 @@
     [port2 connect:connection2];
 }
 
-- (void) testSentProxy
+- (void) requireDeallocation:(id(^)(void))aBlock
 {
-    __weak id deallocMeWeak;
+    __weak id deallocMe;
     
     @autoreleasepool {
-        id deallocMeStrong = [[NSObject alloc] init];
-        deallocMeWeak = deallocMeStrong;
-        
-        port1.rootObject = [[ObjectHolder alloc] init];
-        [[port2 sendTo:port2.remote] setProperty:[port2 reference:deallocMeStrong]];
-        
-        STAssertNotNil([port1.rootObject property], nil);
-        
-        deallocMeStrong = nil;
-        [port1.rootObject setProperty:nil];
+        deallocMe = aBlock();
     }
     
     @autoreleasepool {
@@ -57,41 +48,48 @@
         [port2 flushReleases];
     }
     
-    STAssertNil(deallocMeWeak, @"Object leaked");
+    STAssertNil(deallocMe, @"Object leaked: %@", deallocMe);
+}
+
+- (void) testSentProxy
+{
+    [self requireDeallocation:^id{
+        id testObj = [[NSObject alloc] init];
+        
+        port1.rootObject = [[ObjectHolder alloc] init];
+        [[port2 sendTo:port2.remote] setProperty:[port2 reference:testObj]];
+        
+        STAssertNotNil([port1.rootObject property], nil);
+        
+        [port1.rootObject setProperty:nil];
+        return testObj;
+    }];
 }
 
 - (void) testReturnByReference
 {
-    __weak id deallocMeWeak;
-    
-    @autoreleasepool {
+    [self requireDeallocation:^id{
+        id testObj = [[NSObject alloc] init];
+        
         port1.rootObject = [[ObjectHolder alloc] init];
-        [port1.rootObject setProperty:[[NSObject alloc] init]];
-        deallocMeWeak = [port1.rootObject property];
+        [port1.rootObject setProperty:testObj];
         
         [port2 send:[port2.remote property] refResponse:^(id response, NSError *error) {
             // released...
         }];
         
         [port1.rootObject setProperty:nil];
-    }
-    
-    @autoreleasepool {
-        [port1 flushReleases];
-        [port2 flushReleases];
-    }
-    
-    STAssertNil(deallocMeWeak, @"Object leaked");
+        return testObj;
+    }];
 }
 
 - (void) testInArgument
 {
-    __weak id deallocMeWeak;
-    
-    @autoreleasepool {
+    [self requireDeallocation:^id{
+        id testObj = [[NSObject alloc] init];
+        
         port1.rootObject = [[ObjectHolder alloc] init];
-        [port1.rootObject setProperty:[[NSObject alloc] init]];
-        deallocMeWeak = [port1.rootObject property];
+        [port1.rootObject setProperty:testObj];
         
         [port2 send:[port2.remote property] refResponse:^(id response, NSError *error) {
             [response setValue:response forKey:response];
@@ -99,39 +97,26 @@
         }];
         
         [port1.rootObject setProperty:nil];
-    }
-    
-    @autoreleasepool {
-        [port1 flushReleases];
-        [port2 flushReleases];
-    }
-    
-    STAssertNil(deallocMeWeak, @"Object leaked");
+        return testObj;
+    }];
 }
 
 - (void) testCopy
 {
-    __weak id deallocMeWeak;
-    
-    @autoreleasepool {
+    [self requireDeallocation:^id{
+        id testObj = [[NSMutableArray alloc] initWithObjects:@"a", @"b", nil];
+        
         port1.rootObject = [[ObjectHolder alloc] init];
-        [port1.rootObject setProperty:[[NSMutableArray alloc] init]];
-        deallocMeWeak = [port1.rootObject property];
+        [port1.rootObject setProperty:testObj];
         
         [port2 send:[[port2.remote property] copy] refResponse:^(id response, NSError *error) {
             [response setValue:response forKey:response];
             // released...
         }];
         
-        @autoreleasepool {
-            [port1 flushReleases];
-            [port2 flushReleases];
-        }
-        
         [port1.rootObject setProperty:nil];
-    }
-    
-    STAssertNil(deallocMeWeak, @"Object leaked");
+        return testObj;
+    }];
 }
 
 @end

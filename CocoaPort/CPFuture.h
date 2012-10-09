@@ -23,41 +23,79 @@
 @class CPPort;
 
 
+/**
+ Semi-abstract base class for futures.
+ 
+ CPFuture provides a common implementation of -forwardInvocation, which 
+ (unless overridden) returns a CPInvocationFuture representing the method invocation.
+*/
+
 @interface CPFuture : NSProxy
 + (id) futureWithPort:(CPPort*)port;
 @end
 
 
+/**
+ Represents the root object of the remote port.
+*/
+
 @interface CPRootObjectReferenceFuture : CPFuture
 @end
 
+
+/**
+ Represents the remote port. Used to implement higher-level CPPort features.
+*/
 
 @interface CPRemotePortReferenceFuture : CPFuture
 @end
 
 
-@interface CPInvocationFuture : CPFuture
-+ (id) futureWithPort:(CPPort*)port targetExpression:(id)target selector:(SEL)selector args:(NSArray*)args;
-@end 
+/**
+ Represents a method invocation.
+*/
 
+@interface CPInvocationFuture : CPFuture
++ (id) futureWithPort:(CPPort*)port targetExpression:(id)target selectorName:(NSString*)selectorName args:(NSArray*)args;
+@end
+
+
+/**
+ Reference to a remote object.
+ 
+ Deallocating a CPRemoteReferenceFuture results in a CPRetainMessage being sent over _port_
+ to release the referenced object.
+*/
 
 @interface CPRemoteReferenceFuture : CPFuture
 + (id) futureWithPort:(CPPort*)port target:(NSData*)target;
 @end
 
 
+/**
+ Returned by [CPPort reference:].
+ 
+ Messages are forwarded to _localObject_, with the result returned as a CPLocalObjectReferenceFuture.
+ 
+ Never sent over a port -- received as a CPRemoteReferenceFuture.
+*/
+
 @interface CPLocalObjectReferenceFuture : CPFuture
 + (id) futureWithPort:(CPPort *)port localObject:(id)local;
 @end
 
 
+/**
+ Converted to actual nil when received by a port.
+*/
+
 @interface CPNilFuture : CPFuture
 @end
 
 
-@interface CPClassReferenceFuture : CPFuture
-+ (id) futureWithPort:(CPPort *)port className:(id)className;
-@end
-
+/**
+ Converts a future to an object suitable for encoding, sending over the port and
+ being evaluated by the remote port.
+*/
 
 OBJC_EXPORT id<CPEvaluable> CPConvertFutureExpressionToEvaluable(id futureExpression);

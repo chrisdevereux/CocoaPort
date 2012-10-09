@@ -20,6 +20,8 @@
 #import "CPEvaluable.h"
 #import "CPPort.h"
 #import "CPFuture.h"
+#import "CPUtilities.h"
+
 
 @implementation CPObjectValue
 
@@ -235,9 +237,11 @@
 		__unsafe_unretained id value;
 		[inv getReturnValue:&value];
         
-        
-        
 		*resultPtr = value;
+        if (CPIsRetainingSelectorName(_sel)) {
+            // Will have been returned with +1 refcount, but not autoreleased on return from invocation
+            CPAutorelease(value);
+        }
 	}
 	
 	return YES;

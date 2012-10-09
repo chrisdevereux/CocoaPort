@@ -37,6 +37,9 @@
 		618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F6B16244350000837E5 /* TestRetainRelease.m */; };
 		618F8F8816244BF2000837E5 /* libCocoaPort-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */; };
 		618F8F8A16245E59000837E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618F8F8916245E59000837E5 /* Security.framework */; };
+		618F8F8D1624A103000837E5 /* CPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F8B1624A103000837E5 /* CPUtilities.h */; };
+		618F8F8E1624A103000837E5 /* CPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F8C1624A103000837E5 /* CPUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		618F8F8F1624A103000837E5 /* CPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F8C1624A103000837E5 /* CPUtilities.m */; };
 		6197702C157CF56F00788469 /* CPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197702A157CF56F00788469 /* CPConnection.h */; };
 		6197703C157D153500788469 /* CPFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197703A157D153500788469 /* CPFuture.h */; };
 		6197703D157D153500788469 /* CPFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6197703B157D153500788469 /* CPFuture.m */; };
@@ -132,6 +135,8 @@
 		618F8F7B16244B76000837E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		618F8F8016244B76000837E5 /* CocoaPortTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPortTests-Prefix.pch"; sourceTree = "<group>"; };
 		618F8F8916245E59000837E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		618F8F8B1624A103000837E5 /* CPUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUtilities.h; sourceTree = "<group>"; };
+		618F8F8C1624A103000837E5 /* CPUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUtilities.m; sourceTree = "<group>"; };
 		61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocoaPort-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61976FEF157CE9B000788469 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		61976FF2157CE9B000788469 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -362,6 +367,8 @@
 				619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */,
 				61FCB6FD16130E6D0056B5A4 /* CPNamespace-iOS.h */,
 				61FE792E160A177200C5E23E /* CPNamespace-MacOS.h */,
+				618F8F8B1624A103000837E5 /* CPUtilities.h */,
+				618F8F8C1624A103000837E5 /* CPUtilities.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -438,6 +445,7 @@
 				61827B921614C0A2006FAA09 /* DDTTYLogger.h in Headers */,
 				618F8F601624281A000837E5 /* CPRetainReleaseMessage.h in Headers */,
 				618F8F661624411B000837E5 /* CPInAppConnection.h in Headers */,
+				618F8F8D1624A103000837E5 /* CPUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +620,7 @@
 				61827B8E1614B197006FAA09 /* DDLog.m in Sources */,
 				61827B931614C0A2006FAA09 /* DDTTYLogger.m in Sources */,
 				618F8F671624411B000837E5 /* CPInAppConnection.m in Sources */,
+				618F8F8E1624A103000837E5 /* CPUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +648,7 @@
 				61827B941614C0A2006FAA09 /* DDTTYLogger.m in Sources */,
 				618F8F621624281A000837E5 /* CPRetainReleaseMessage.m in Sources */,
 				618F8F681624411B000837E5 /* CPInAppConnection.m in Sources */,
+				618F8F8F1624A103000837E5 /* CPUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
