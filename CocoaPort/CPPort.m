@@ -304,6 +304,10 @@
 	return resp;
 }
 
+- (NSUInteger) retainCountForObject:(id)object
+{
+    return [_referencedObjects countForObject:object];
+}
 
 
 #pragma mark - Managing pending responses:

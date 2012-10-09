@@ -70,7 +70,9 @@
 	if (*resultPtr)
 		return YES;
 	
-	*err = [NSError errorWithDomain:CPPortErrorDomain code:kCPPortBadReference userInfo:@{ @"id" : _id }];
+    if (err) {
+        *err = [NSError errorWithDomain:CPPortErrorDomain code:kCPPortBadReference userInfo:@{ @"id" : _id }];
+    }
 	return NO;
 }
 
@@ -265,7 +267,9 @@
 		return YES;
 	}
 	
-	*err = [NSError errorWithDomain:CPPortErrorDomain code:kCPPortBadReference userInfo:@{@"class": _name}];
+    if (err) {
+        *err = [NSError errorWithDomain:CPPortErrorDomain code:kCPPortBadReference userInfo:@{@"class": _name}];
+    }
 	return NO;
 }
 

@@ -30,6 +30,8 @@
 - (NSData*) uidForObject:(id)object;
 - (id) objectForUID:(NSData*)uid;
 
+- (NSUInteger) countForObject:(id)object;
+
 - (void) enumerateObjectsUsingBlock:(void (^)(NSData*, id))block;
 
 @end

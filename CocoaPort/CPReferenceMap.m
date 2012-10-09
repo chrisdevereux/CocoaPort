@@ -194,4 +194,10 @@ static void BlockEnumerateUIDMap(const void* k, const void* v, void* ctx)
 }
 
 
+- (NSUInteger) countForObject:(id)object
+{
+    CPReferenceMapRecord* val = CFDictionaryGetValue(_objectMapped, (__bridge void*)object);
+    return  val ? val.count : 0;
+}
+
 @end

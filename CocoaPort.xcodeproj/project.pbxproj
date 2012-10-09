@@ -26,8 +26,16 @@
 		618699CC15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		618699D015C75BFD008BBD84 /* CPSentReferencePlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */; };
 		618699D115C75BFD008BBD84 /* CPSentReferencePlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */; };
-		61977002157CE9B000788469 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61977001157CE9B000788469 /* SenTestingKit.framework */; };
-		61977006157CE9B000788469 /* libCocoaPort-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */; };
+		618F8F601624281A000837E5 /* CPRetainReleaseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F5E1624281A000837E5 /* CPRetainReleaseMessage.h */; };
+		618F8F621624281A000837E5 /* CPRetainReleaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F5F1624281A000837E5 /* CPRetainReleaseMessage.m */; };
+		618F8F661624411B000837E5 /* CPInAppConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F641624411B000837E5 /* CPInAppConnection.h */; };
+		618F8F671624411B000837E5 /* CPInAppConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F651624411B000837E5 /* CPInAppConnection.m */; };
+		618F8F681624411B000837E5 /* CPInAppConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F651624411B000837E5 /* CPInAppConnection.m */; };
+		618F8F7516244B76000837E5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61977001157CE9B000788469 /* SenTestingKit.framework */; };
+		618F8F7616244B76000837E5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FEF157CE9B000788469 /* Cocoa.framework */; };
+		618F8F7C16244B76000837E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 618F8F7A16244B76000837E5 /* InfoPlist.strings */; };
+		618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F6B16244350000837E5 /* TestRetainRelease.m */; };
+		618F8F8816244BF2000837E5 /* libCocoaPort-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */; };
 		6197702C157CF56F00788469 /* CPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197702A157CF56F00788469 /* CPConnection.h */; };
 		6197703C157D153500788469 /* CPFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197703A157D153500788469 /* CPFuture.h */; };
 		6197703D157D153500788469 /* CPFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6197703B157D153500788469 /* CPFuture.m */; };
@@ -37,7 +45,6 @@
 		61977054157D675B00788469 /* CPEvaluable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197703E157D2BE600788469 /* CPEvaluable.h */; };
 		61977057157D67B000788469 /* CPPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 61977055157D67B000788469 /* CPPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61977058157D67B000788469 /* CPPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 61977056157D67B000788469 /* CPPort.m */; };
-		61977062157D9BF900788469 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FF4157CE9B000788469 /* Foundation.framework */; };
 		619843C7157E487F005A66F6 /* CPRetainReleaseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 619843C5157E487F005A66F6 /* CPRetainReleaseMessage.h */; };
 		619843C8157E487F005A66F6 /* CPRetainReleaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 619843C6157E487F005A66F6 /* CPRetainReleaseMessage.m */; };
 		619843D8157E8499005A66F6 /* CPResponseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 619843D6157E8499005A66F6 /* CPResponseMessage.h */; };
@@ -72,12 +79,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		61977004157CE9B000788469 /* PBXContainerItemProxy */ = {
+		618F8F8616244BC3000837E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 61976FE3157CE9B000788469 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 61976FEB157CE9B000788469;
-			remoteInfo = CocoaPort;
+			remoteInfo = "CocoaPort-MacOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -112,6 +119,17 @@
 		618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPPort+RPUnarchiverDelegate.m"; sourceTree = "<group>"; };
 		618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSentReferencePlaceholder.h; sourceTree = "<group>"; };
 		618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSentReferencePlaceholder.m; sourceTree = "<group>"; };
+		618F8F5E1624281A000837E5 /* CPRetainReleaseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPRetainReleaseMessage.h; sourceTree = "<group>"; };
+		618F8F5F1624281A000837E5 /* CPRetainReleaseMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPRetainReleaseMessage.m; sourceTree = "<group>"; };
+		618F8F641624411B000837E5 /* CPInAppConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPInAppConnection.h; sourceTree = "<group>"; };
+		618F8F651624411B000837E5 /* CPInAppConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPInAppConnection.m; sourceTree = "<group>"; };
+		618F8F6A16244350000837E5 /* TestRetainRelease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRetainRelease.h; sourceTree = "<group>"; };
+		618F8F6B16244350000837E5 /* TestRetainRelease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRetainRelease.m; sourceTree = "<group>"; };
+		618F8F6D16244683000837E5 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Vendor/OCMock/OSX/OCMock.framework; sourceTree = "<group>"; };
+		618F8F7416244B76000837E5 /* CocoaPortTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPortTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		618F8F7916244B76000837E5 /* CocoaPortTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPortTests-Info.plist"; sourceTree = "<group>"; };
+		618F8F7B16244B76000837E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		618F8F8016244B76000837E5 /* CocoaPortTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPortTests-Prefix.pch"; sourceTree = "<group>"; };
 		61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocoaPort-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61976FEF157CE9B000788469 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		61976FF2157CE9B000788469 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -119,7 +137,6 @@
 		61976FF4157CE9B000788469 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		61976FF7157CE9B000788469 /* CocoaPort-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPort-Prefix.pch"; sourceTree = "<group>"; };
 		61976FF8157CE9B000788469 /* CocoaPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPort.h; sourceTree = "<group>"; };
-		61977000157CE9B000788469 /* CocoaPortTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPortTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61977001157CE9B000788469 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6197702A157CF56F00788469 /* CPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPConnection.h; sourceTree = "<group>"; };
 		6197703A157D153500788469 /* CPFuture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPFuture.h; path = CocoaPort/CPFuture.h; sourceTree = "<group>"; };
@@ -146,27 +163,24 @@
 		61FCB6E016130C990056B5A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		61FCB6E416130C990056B5A4 /* CocoaPort-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPort-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		61FCB6FD16130E6D0056B5A4 /* CPNamespace-iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPNamespace-iOS.h"; sourceTree = "<group>"; };
-		61FCB807161321470056B5A4 /* Replica-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Replica-iOS-Prefix.pch"; sourceTree = "<group>"; };
-		61FCB808161321470056B5A4 /* Replica_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Replica_iOS.h; sourceTree = "<group>"; };
-		61FCB80A161321470056B5A4 /* Replica_iOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Replica_iOS.m; sourceTree = "<group>"; };
 		61FE792E160A177200C5E23E /* CPNamespace-MacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPNamespace-MacOS.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		618F8F7016244B76000837E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				618F8F7516244B76000837E5 /* SenTestingKit.framework in Frameworks */,
+				618F8F7616244B76000837E5 /* Cocoa.framework in Frameworks */,
+				618F8F8816244BF2000837E5 /* libCocoaPort-MacOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61976FE9157CE9B000788469 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61976FFC157CE9B000788469 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				61977062157D9BF900788469 /* Foundation.framework in Frameworks */,
-				61977002157CE9B000788469 /* SenTestingKit.framework in Frameworks */,
-				61977006157CE9B000788469 /* libCocoaPort-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				6197702A157CF56F00788469 /* CPConnection.h */,
+				618F8F641624411B000837E5 /* CPInAppConnection.h */,
+				618F8F651624411B000837E5 /* CPInAppConnection.m */,
 				61329DD915F19F4900E5E43C /* Socket */,
 			);
 			name = Connection;
@@ -215,12 +231,32 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		618F8F7716244B76000837E5 /* CocoaPortTests */ = {
+			isa = PBXGroup;
+			children = (
+				618F8F6A16244350000837E5 /* TestRetainRelease.h */,
+				618F8F6B16244350000837E5 /* TestRetainRelease.m */,
+				618F8F7816244B76000837E5 /* Supporting Files */,
+			);
+			path = CocoaPortTests;
+			sourceTree = "<group>";
+		};
+		618F8F7816244B76000837E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				618F8F7916244B76000837E5 /* CocoaPortTests-Info.plist */,
+				618F8F7A16244B76000837E5 /* InfoPlist.strings */,
+				618F8F8016244B76000837E5 /* CocoaPortTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		61976FE1157CE9B000788469 = {
 			isa = PBXGroup;
 			children = (
 				61976FF5157CE9B000788469 /* CocoaPort */,
 				61FCB6E216130C990056B5A4 /* CocoaPort-iOS */,
-				61FCB805161321460056B5A4 /* Replica-iOS */,
+				618F8F7716244B76000837E5 /* CocoaPortTests */,
 				61976FEE157CE9B000788469 /* Frameworks */,
 				61976FED157CE9B000788469 /* Products */,
 			);
@@ -230,8 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */,
-				61977000157CE9B000788469 /* CocoaPortTests.octest */,
 				61FCB6DF16130C990056B5A4 /* libCocoaPort-iOS.a */,
+				618F8F7416244B76000837E5 /* CocoaPortTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +275,7 @@
 		61976FEE157CE9B000788469 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				618F8F6D16244683000837E5 /* OCMock.framework */,
 				61976FEF157CE9B000788469 /* Cocoa.framework */,
 				61977001157CE9B000788469 /* SenTestingKit.framework */,
 				61FCB6E016130C990056B5A4 /* Foundation.framework */,
@@ -315,6 +352,8 @@
 			children = (
 				619FE8DD15F23DAA003FF849 /* CPCodingObject.h */,
 				619FE8DE15F23DAA003FF849 /* CPCodingObject.m */,
+				618F8F5E1624281A000837E5 /* CPRetainReleaseMessage.h */,
+				618F8F5F1624281A000837E5 /* CPRetainReleaseMessage.m */,
 				619E8C7015F6A0FA00AFA249 /* CPReferenceMap.h */,
 				619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */,
 				61FCB6FD16130E6D0056B5A4 /* CPNamespace-iOS.h */,
@@ -364,24 +403,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		61FCB805161321460056B5A4 /* Replica-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				61FCB808161321470056B5A4 /* Replica_iOS.h */,
-				61FCB80A161321470056B5A4 /* Replica_iOS.m */,
-				61FCB806161321470056B5A4 /* Supporting Files */,
-			);
-			path = "Replica-iOS";
-			sourceTree = "<group>";
-		};
-		61FCB806161321470056B5A4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				61FCB807161321470056B5A4 /* Replica-iOS-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -411,12 +432,33 @@
 				61FCB6FE16130E6D0056B5A4 /* CPNamespace-iOS.h in Headers */,
 				61827B8D1614B197006FAA09 /* DDLog.h in Headers */,
 				61827B921614C0A2006FAA09 /* DDTTYLogger.h in Headers */,
+				618F8F601624281A000837E5 /* CPRetainReleaseMessage.h in Headers */,
+				618F8F661624411B000837E5 /* CPInAppConnection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		618F8F7316244B76000837E5 /* CocoaPortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 618F8F8116244B76000837E5 /* Build configuration list for PBXNativeTarget "CocoaPortTests" */;
+			buildPhases = (
+				618F8F6F16244B76000837E5 /* Sources */,
+				618F8F7016244B76000837E5 /* Frameworks */,
+				618F8F7116244B76000837E5 /* Resources */,
+				618F8F7216244B76000837E5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				618F8F8716244BC3000837E5 /* PBXTargetDependency */,
+			);
+			name = CocoaPortTests;
+			productName = CocoaPortTests;
+			productReference = 618F8F7416244B76000837E5 /* CocoaPortTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		61976FEB157CE9B000788469 /* CocoaPort-MacOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61977012157CE9B100788469 /* Build configuration list for PBXNativeTarget "CocoaPort-MacOS" */;
@@ -434,25 +476,6 @@
 			productName = CocoaPort;
 			productReference = 61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		61976FFF157CE9B000788469 /* CocoaPortTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 61977015157CE9B100788469 /* Build configuration list for PBXNativeTarget "CocoaPortTests" */;
-			buildPhases = (
-				61976FFB157CE9B000788469 /* Sources */,
-				61976FFC157CE9B000788469 /* Frameworks */,
-				61976FFD157CE9B000788469 /* Resources */,
-				61976FFE157CE9B000788469 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61977005157CE9B000788469 /* PBXTargetDependency */,
-			);
-			name = CocoaPortTests;
-			productName = CocoaPortTests;
-			productReference = 61977000157CE9B000788469 /* CocoaPortTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 		61FCB6DE16130C990056B5A4 /* CocoaPort-iOS */ = {
 			isa = PBXNativeTarget;
@@ -494,24 +517,25 @@
 			projectRoot = "";
 			targets = (
 				61976FEB157CE9B000788469 /* CocoaPort-MacOS */,
-				61976FFF157CE9B000788469 /* CocoaPortTests */,
 				61FCB6DE16130C990056B5A4 /* CocoaPort-iOS */,
+				618F8F7316244B76000837E5 /* CocoaPortTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		61976FFD157CE9B000788469 /* Resources */ = {
+		618F8F7116244B76000837E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618F8F7C16244B76000837E5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		61976FFE157CE9B000788469 /* ShellScript */ = {
+		618F8F7216244B76000837E5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -553,6 +577,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		618F8F6F16244B76000837E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61976FE8157CE9B000788469 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,13 +607,7 @@
 				6105E75C1602C6F600D0E8DA /* CPNilPlaceholder.m in Sources */,
 				61827B8E1614B197006FAA09 /* DDLog.m in Sources */,
 				61827B931614C0A2006FAA09 /* DDTTYLogger.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61976FFB157CE9B000788469 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				618F8F671624411B000837E5 /* CPInAppConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,20 +633,73 @@
 				61FCB6FC16130DEC0056B5A4 /* GCDAsyncSocket.m in Sources */,
 				61827B8F1614B1AE006FAA09 /* DDLog.m in Sources */,
 				61827B941614C0A2006FAA09 /* DDTTYLogger.m in Sources */,
+				618F8F621624281A000837E5 /* CPRetainReleaseMessage.m in Sources */,
+				618F8F681624411B000837E5 /* CPInAppConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		61977005157CE9B000788469 /* PBXTargetDependency */ = {
+		618F8F8716244BC3000837E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 61976FEB157CE9B000788469 /* CocoaPort-MacOS */;
-			targetProxy = 61977004157CE9B000788469 /* PBXContainerItemProxy */;
+			targetProxy = 618F8F8616244BC3000837E5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		618F8F7A16244B76000837E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				618F8F7B16244B76000837E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		618F8F8216244B76000837E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Vendor/OCMock/OSX\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPortTests/CocoaPortTests-Prefix.pch";
+				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		618F8F8316244B76000837E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Vendor/OCMock/OSX\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPortTests/CocoaPortTests-Prefix.pch";
+				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		61977010157CE9B100788469 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -704,32 +783,6 @@
 			};
 			name = Release;
 		};
-		61977016157CE9B100788469 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
-				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		61977017157CE9B100788469 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPort/CocoaPort-Prefix.pch";
-				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 		61FCB6EA16130C990056B5A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -775,6 +828,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		618F8F8116244B76000837E5 /* Build configuration list for PBXNativeTarget "CocoaPortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				618F8F8216244B76000837E5 /* Debug */,
+				618F8F8316244B76000837E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		61976FE6157CE9B000788469 /* Build configuration list for PBXProject "CocoaPort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -789,15 +850,6 @@
 			buildConfigurations = (
 				61977013157CE9B100788469 /* Debug */,
 				61977014157CE9B100788469 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		61977015157CE9B100788469 /* Build configuration list for PBXNativeTarget "CocoaPortTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61977016157CE9B100788469 /* Debug */,
-				61977017157CE9B100788469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
