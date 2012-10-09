@@ -36,6 +36,7 @@
 		618F8F7C16244B76000837E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 618F8F7A16244B76000837E5 /* InfoPlist.strings */; };
 		618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F6B16244350000837E5 /* TestRetainRelease.m */; };
 		618F8F8816244BF2000837E5 /* libCocoaPort-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */; };
+		618F8F8A16245E59000837E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618F8F8916245E59000837E5 /* Security.framework */; };
 		6197702C157CF56F00788469 /* CPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197702A157CF56F00788469 /* CPConnection.h */; };
 		6197703C157D153500788469 /* CPFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197703A157D153500788469 /* CPFuture.h */; };
 		6197703D157D153500788469 /* CPFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6197703B157D153500788469 /* CPFuture.m */; };
@@ -130,6 +131,7 @@
 		618F8F7916244B76000837E5 /* CocoaPortTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPortTests-Info.plist"; sourceTree = "<group>"; };
 		618F8F7B16244B76000837E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		618F8F8016244B76000837E5 /* CocoaPortTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPortTests-Prefix.pch"; sourceTree = "<group>"; };
+		618F8F8916245E59000837E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocoaPort-MacOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61976FEF157CE9B000788469 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		61976FF2157CE9B000788469 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618F8F8A16245E59000837E5 /* Security.framework in Frameworks */,
 				618F8F7516244B76000837E5 /* SenTestingKit.framework in Frameworks */,
 				618F8F7616244B76000837E5 /* Cocoa.framework in Frameworks */,
 				618F8F8816244BF2000837E5 /* libCocoaPort-MacOS.a in Frameworks */,
@@ -254,6 +257,7 @@
 		61976FE1157CE9B000788469 = {
 			isa = PBXGroup;
 			children = (
+				618F8F8916245E59000837E5 /* Security.framework */,
 				61976FF5157CE9B000788469 /* CocoaPort */,
 				61FCB6E216130C990056B5A4 /* CocoaPort-iOS */,
 				618F8F7716244B76000837E5 /* CocoaPortTests */,
@@ -675,6 +679,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPortTests/CocoaPortTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -695,6 +700,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPortTests/CocoaPortTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

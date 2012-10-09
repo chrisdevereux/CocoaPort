@@ -52,6 +52,11 @@
         [port1.rootObject setProperty:nil];
     }
     
+    @autoreleasepool {
+        [port1 flushReleases];
+        [port2 flushReleases];
+    }
+    
     STAssertNil(deallocMeWeak, @"Object leaked");
 }
 
@@ -69,6 +74,11 @@
         }];
         
         [port1.rootObject setProperty:nil];
+    }
+    
+    @autoreleasepool {
+        [port1 flushReleases];
+        [port2 flushReleases];
     }
     
     STAssertNil(deallocMeWeak, @"Object leaked");
@@ -89,6 +99,11 @@
         }];
         
         [port1.rootObject setProperty:nil];
+    }
+    
+    @autoreleasepool {
+        [port1 flushReleases];
+        [port2 flushReleases];
     }
     
     STAssertNil(deallocMeWeak, @"Object leaked");

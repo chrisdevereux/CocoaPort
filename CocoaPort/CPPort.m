@@ -22,6 +22,7 @@
 #import "CPReferenceMap.h"
 #import "CPEvaluable.h"
 #import "CPRemoteInvocation.h"
+#import "CPRetainReleaseMessage.h"
 
 #import "CPObservationHandle.h"
 #import "CPObservationManager.h"
@@ -50,6 +51,7 @@
 	
 	CPObservationManager* _observationManager;
 	
+    NSMutableArray* _releaseList;
 	dispatch_queue_t _queue;
 	
 	struct {
@@ -57,6 +59,10 @@
 		uint8_t didRaiseRemote :1;
 		uint8_t didDisconnect :1;
 	} _delegateHas;
+    
+    struct {
+        uint8_t hasPendingReleases :1;
+    } _flags;
 }
 
 @synthesize delegate = _delegate;
@@ -72,6 +78,7 @@
 	dispatch_retain(_queue);
 	
 	_observationManager = [[CPObservationManager alloc] init];
+    _releaseList = [[NSMutableArray alloc] init];
 	
 	return self;
 }
@@ -309,6 +316,29 @@
     return [_referencedObjects countForObject:object];
 }
 
+- (void) enqueueReleaseOfRemoteObjectWithHandle:(NSData *)handle
+{
+    [self performBlock:^{
+        [_releaseList addObject:handle];
+        
+        if (!_flags.hasPendingReleases) {
+            _flags.hasPendingReleases = YES;
+            dispatch_async(_queue, ^{
+                _flags.hasPendingReleases = NO;
+                [self flushReleases];
+            });
+        }
+    }];
+}
+
+- (void) flushReleases
+{
+    [self performBlock:^{
+        [self sendPortMessage:[[CPReleaseReference alloc] initWithIDs:_releaseList]];
+        [_releaseList removeAllObjects];
+    }];
+}
+
 
 #pragma mark - Managing pending responses:
 
@@ -407,7 +437,8 @@
 	_responseHandlers = nil;
 	
 	[_observationManager removeAllObservers];
-	
+	[_releaseList removeAllObjects];
+    
 	if (_delegateHas.didDisconnect) {
 		[_delegate portDidDisconnect:self];
 	}

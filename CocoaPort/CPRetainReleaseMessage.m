@@ -60,67 +60,15 @@
 	NSMutableArray* _ids;
 }
 
-static NSOperationQueue* GetCurrentReleaseQueue(void)
-{
-    return [NSOperationQueue currentQueue] ?: [NSOperationQueue mainQueue];
-}
-
-static CFMutableDictionaryRef GetCurrentReleaseMessageMap(void)
-{
-    NSOperationQueue* queue = GetCurrentReleaseQueue();
-    
-    @synchronized(queue) {
-        static float mapKey;
-        CFMutableDictionaryRef dict = (__bridge void*) objc_getAssociatedObject(queue, &mapKey);
-        if (!dict) {
-            dict = CFDictionaryCreateMutable(NULL, 1, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-            objc_setAssociatedObject(queue, &mapKey, (__bridge id)dict, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            CFRelease(dict);
-        }
-        
-        return dict;
-    }
-}
-
-+ (void) releaseRemoteObjectWithID:(NSData *)remoteID viaPort:(CPPort *)port
-{
-    CFMutableDictionaryRef dict = GetCurrentReleaseMessageMap();
-    
-    @synchronized((__bridge id)dict) {
-        CPReleaseReference* releaseMsg = (__bridge id) CFDictionaryGetValue(dict, (__bridge void*)port);
-        if (!releaseMsg) {
-            releaseMsg = [[self alloc] init];
-            NSOperationQueue* queue = GetCurrentReleaseQueue();
-            
-            [queue addOperationWithBlock:^{
-                @synchronized((__bridge id)dict) {
-                    CFDictionaryRemoveValue(dict, (__bridge void*)port);
-                }
-                
-                [port sendPortMessage:releaseMsg];
-            }];
-            
-            CFDictionarySetValue(dict, (__bridge void*)port, (__bridge void*)releaseMsg);
-        }
-        
-        [releaseMsg addID:remoteID];
-    }
-}
-
-- (id) init
+- (id) initWithIDs:(NSMutableArray *)remoteIDs
 {
     self = [super init];
     if (!self)
         return nil;
     
-    _ids = [[NSMutableArray alloc] init];
+    _ids = remoteIDs;
     
     return self;
-}
-
-- (void) addID:(NSData*)remoteID
-{
-    [_ids addObject:remoteID];
 }
 
 + (NSArray*) keysForCoding

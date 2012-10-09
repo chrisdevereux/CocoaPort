@@ -117,6 +117,9 @@ typedef void(^CPResponseHandler)(id response, NSError* error);
 - (id) objectForHandle:(NSData*)objectID;
 - (NSUInteger) retainCountForObject:(id)object;
 
+- (void) enqueueReleaseOfRemoteObjectWithHandle:(NSData*)handle;
+- (void) flushReleases;
+
 
 #pragma mark - Managing pending responses:
 

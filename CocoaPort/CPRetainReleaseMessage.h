@@ -29,21 +29,6 @@
 
 @interface CPReleaseReference : CPCodingObject <CPPortMessage>
 
-/**
- Sends a release message for _remoteID_ over _port_.
- 
- The message is not sent immediately, as for efficiency reasons, all release 
- requests in a cycle of the event loop are aggregated into a single message, 
- which is sent once the cycle completes.
- 
- If called from a dispatch queue when no requests are queued, a block to send
- the release message is posted to the curent queue, and any following requests
- are added to that message.
- 
- If called from any other thread, the release request is treated as if it came
- from the main queue.
-*/
- 
-+ (void) releaseRemoteObjectWithID:(NSData*)remoteID viaPort:(CPPort*)port;
+- (id) initWithIDs:(NSMutableArray *)remoteIDs;
 
 @end
