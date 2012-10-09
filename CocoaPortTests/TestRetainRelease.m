@@ -109,4 +109,29 @@
     STAssertNil(deallocMeWeak, @"Object leaked");
 }
 
+- (void) testCopy
+{
+    __weak id deallocMeWeak;
+    
+    @autoreleasepool {
+        port1.rootObject = [[ObjectHolder alloc] init];
+        [port1.rootObject setProperty:[[NSMutableArray alloc] init]];
+        deallocMeWeak = [port1.rootObject property];
+        
+        [port2 send:[[port2.remote property] copy] refResponse:^(id response, NSError *error) {
+            [response setValue:response forKey:response];
+            // released...
+        }];
+        
+        @autoreleasepool {
+            [port1 flushReleases];
+            [port2 flushReleases];
+        }
+        
+        [port1.rootObject setProperty:nil];
+    }
+    
+    STAssertNil(deallocMeWeak, @"Object leaked");
+}
+
 @end

@@ -234,6 +234,9 @@
 	} else {
 		__unsafe_unretained id value;
 		[inv getReturnValue:&value];
+        
+        
+        
 		*resultPtr = value;
 	}
 	
