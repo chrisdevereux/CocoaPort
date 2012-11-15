@@ -8,6 +8,7 @@
 
 #import "TestRetainRelease.h"
 #import "CPPort.h"
+#import "CPObservationHandle.h"
 #import "CPInAppConnection.h"
 #import <OCMock/OCMock.h>
 
@@ -116,6 +117,28 @@
         
         [port1.rootObject setProperty:nil];
         return testObj;
+    }];
+}
+
+- (void) testKVO
+{
+    [self requireDeallocation:^id{
+        port1.rootObject = [NSMutableDictionary dictionary];
+        __block id update;
+        
+        CPObservationHandle* handle = [port2 addObserverOfRemoteObject:port2.remote keypath:@"foo" copyResponses:^(id response, NSError *error) {
+            update = response;
+        }];
+        
+        [port1.rootObject setValue:@"bar" forKey:@"foo"];
+        STAssertEqualObjects(update, @"bar", @"Update not send");
+        [port1.rootObject setValue:@"bar1" forKey:@"foo"];
+        STAssertEqualObjects(update, @"bar1", @"Update not send");
+        
+        [handle stop];
+        
+        port1.rootObject = nil;
+        return port1.rootObject;
     }];
 }
 

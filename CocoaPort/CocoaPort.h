@@ -31,6 +31,7 @@
 #import <CocoaPort/CPPort.h>
 #import <CocoaPort/CPSocketConnection.h>
 #import <CocoaPort/CPSocketServer.h>
+#import <CocoaPort/CPInAppConnection.h>
 
 #import <CocoaPort/CPCodingObject.h>
 #import <CocoaPort/CPObservationHandle.h>

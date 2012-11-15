@@ -39,7 +39,11 @@
 
 - (void) stop
 {
-	[_port removeObserverOfRemoteObjectWithUID:_uid];
+    @synchronized (self) {
+        [_port removeObserverOfRemoteObjectWithUID:_uid];
+        _port = nil;
+        _uid = nil;
+    }
 }
 
 - (CPScopedObservationHandle*) scopedHandle

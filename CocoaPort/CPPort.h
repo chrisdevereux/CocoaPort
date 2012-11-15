@@ -37,6 +37,7 @@ typedef void(^CPResponseHandler)(id response, NSError* error);
 - (id) initWithQueue:(dispatch_queue_t)delegateQueue;
 
 - (void) connect:(id<CPConnection>)connection;
+//- (id<CPConnection>) connection;
 
 /**
  Stops the connection, sends an error to any pending responses, and

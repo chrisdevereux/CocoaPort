@@ -22,16 +22,16 @@
 
 @implementation CPCodingObject
 
-static float kCPKeyList;
-
 + (NSArray*) keysForCoding
 {
+    static float kCPKeyList;
+    
 	NSMutableArray* keys = objc_getAssociatedObject(self, &kCPKeyList);
 	if (keys)
 		return keys;
 	
 	unsigned count;
-	objc_property_t* properties = class_copyPropertyList([self class], &count);
+	objc_property_t* properties = class_copyPropertyList(self, &count);
 	
 	keys = [[NSMutableArray alloc] initWithCapacity:count];
 	
@@ -41,6 +41,11 @@ static float kCPKeyList;
 	}
 	
 	free(properties);
+    Class superclass = [self superclass];
+    
+    if ([superclass isSubclassOfClass:[CPCodingObject class]]) {
+        [keys addObjectsFromArray:[superclass keysForCoding]];
+    }
 	
 	objc_setAssociatedObject(self, &kCPKeyList, keys, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 	return keys;
