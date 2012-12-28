@@ -34,7 +34,7 @@ Although there are various NSConnection subclasses for different connection type
 
 ### Support for iOS
 
-Not yet implemented, but there are deliberately no OS X-only dependencies. It will hopefuly be possible to communicate between Mac and iOS applications.
+Communication between iOS and OSX is possible and working. Not thoroughly tested.
 
 
 
