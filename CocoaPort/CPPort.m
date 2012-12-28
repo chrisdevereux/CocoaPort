@@ -130,7 +130,7 @@
 	__block id delegate = nil;
 	
 	[self performBlock:^{
-		delegate = _rootObject;
+		delegate = _delegate;
 	}];
 	
 	return delegate;
