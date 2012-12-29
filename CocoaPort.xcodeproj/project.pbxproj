@@ -20,8 +20,6 @@
 		618699CC15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		618699D015C75BFD008BBD84 /* CPSentReferencePlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */; };
 		618699D115C75BFD008BBD84 /* CPSentReferencePlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */; };
-		618F8F601624281A000837E5 /* CPRetainReleaseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F5E1624281A000837E5 /* CPRetainReleaseMessage.h */; };
-		618F8F621624281A000837E5 /* CPRetainReleaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F5F1624281A000837E5 /* CPRetainReleaseMessage.m */; };
 		618F8F661624411B000837E5 /* CPInAppConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F641624411B000837E5 /* CPInAppConnection.h */; };
 		618F8F671624411B000837E5 /* CPInAppConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F651624411B000837E5 /* CPInAppConnection.m */; };
 		618F8F681624411B000837E5 /* CPInAppConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F651624411B000837E5 /* CPInAppConnection.m */; };
@@ -434,7 +432,6 @@
 				6105E75B1602C6F600D0E8DA /* CPNilPlaceholder.h in Headers */,
 				61FE792F160A177200C5E23E /* CPNamespace-MacOS.h in Headers */,
 				61FCB6FE16130E6D0056B5A4 /* CPNamespace-iOS.h in Headers */,
-				618F8F601624281A000837E5 /* CPRetainReleaseMessage.h in Headers */,
 				618F8F661624411B000837E5 /* CPInAppConnection.h in Headers */,
 				618F8F8D1624A103000837E5 /* CPUtilities.h in Headers */,
 				61852F0F162C51700058997D /* GCDAsyncSocket.h in Headers */,
@@ -505,7 +502,7 @@
 		61976FE3157CE9B000788469 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Chris Devereux";
 			};
 			buildConfigurationList = 61976FE6157CE9B000788469 /* Build configuration list for PBXProject "CocoaPort" */;
@@ -635,7 +632,6 @@
 				61FCB6FA16130DEC0056B5A4 /* CPCodingObject.m in Sources */,
 				61FCB6FB16130DEC0056B5A4 /* CPReferenceMap.m in Sources */,
 				61FCB6FC16130DEC0056B5A4 /* GCDAsyncSocket.m in Sources */,
-				618F8F621624281A000837E5 /* CPRetainReleaseMessage.m in Sources */,
 				618F8F681624411B000837E5 /* CPInAppConnection.m in Sources */,
 				618F8F8F1624A103000837E5 /* CPUtilities.m in Sources */,
 			);
