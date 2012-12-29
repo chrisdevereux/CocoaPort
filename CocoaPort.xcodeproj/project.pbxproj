@@ -31,7 +31,7 @@
 		618F8F8A16245E59000837E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618F8F8916245E59000837E5 /* Security.framework */; };
 		618F8F8D1624A103000837E5 /* CPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F8B1624A103000837E5 /* CPUtilities.h */; };
 		618F8F8E1624A103000837E5 /* CPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F8C1624A103000837E5 /* CPUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		618F8F8F1624A103000837E5 /* CPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F8C1624A103000837E5 /* CPUtilities.m */; };
+		618F8F8F1624A103000837E5 /* CPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F8C1624A103000837E5 /* CPUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6197702C157CF56F00788469 /* CPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197702A157CF56F00788469 /* CPConnection.h */; };
 		6197703C157D153500788469 /* CPFuture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6197703A157D153500788469 /* CPFuture.h */; };
 		6197703D157D153500788469 /* CPFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6197703B157D153500788469 /* CPFuture.m */; };
