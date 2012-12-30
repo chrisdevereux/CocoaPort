@@ -59,15 +59,6 @@ enum {
 }
 
 
-#ifdef DEBUG
-
-+ (void) initialize
-{
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
-}
-
-#endif
-
 - (id) init
 {
 	return [self initWithSocket:[[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_current_queue()]];
