@@ -10,7 +10,6 @@
 #import "CPPort.h"
 #import "CPObservationHandle.h"
 #import "CPInAppConnection.h"
-#import <OCMock/OCMock.h>
 
 @interface ObjectHolder : NSObject
 @property (strong, nonatomic) id property;
