@@ -21,8 +21,12 @@
 #import "CPPortMessage.h"
 #import "CPCodingObject.h"
 
+typedef id<NSCoding, NSCopying> (^Encoder)(id obj);
 
 @interface CPResponseMessage : CPCodingObject <CPPortMessage>
+
++ (void)registerEncoder:(Encoder)encoder forType:(Class)type;
++ (void)registerEncoder:(Encoder)encoder forProtocol:(Protocol *)protocol;
 
 - (id) initWithValue:(id)value
 			  isCopy:(BOOL)isCopy

@@ -17,9 +17,13 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#import <objc/runtime.h>
 #import "CPResponseMessage.h"
 #import "CPPort.h"
 #import "CPFuture.h"
+
+static NSMutableDictionary *s_encodersByType = nil;
+static NSMutableDictionary *s_encodersByProtocol = nil;
 
 @implementation CPResponseMessage {
 	NSData* _handlerID;
@@ -31,6 +35,48 @@
 + (NSArray*) keysForCoding
 {
 	return @[@"value", @"err", @"handlerID", @"isCopy"];
+}
+
++ (void)registerEncoder:(Encoder)encoder forType:(Class)type {
+	if (!s_encodersByType)
+		s_encodersByType = [NSMutableDictionary dictionary];
+	
+	s_encodersByType[NSStringFromClass(type)] = encoder;
+}
+
++ (void)registerEncoder:(Encoder)encoder forProtocol:(Protocol *)protocol {
+	if (!s_encodersByProtocol)
+		s_encodersByProtocol = [NSMutableDictionary dictionary];
+	
+	s_encodersByProtocol[NSStringFromProtocol(protocol)] = encoder;
+}
+
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+	for (NSString* k in [[self class] keysForCoding]) {
+		id obj = [self valueForKey:k];
+		Encoder encoder = nil;
+		
+		for (NSString *c in s_encodersByType) {
+			Class cls = NSClassFromString(c);
+			
+			if ([[obj class] isSubclassOfClass:cls])
+				encoder = s_encodersByType[c];
+		}
+
+		if (!encoder) {
+			for (NSString *p in s_encodersByProtocol) {
+				if ([obj conformsToProtocol:NSProtocolFromString(p)]) {
+					encoder = s_encodersByProtocol[p];
+					break;
+				}
+			}
+		}
+		
+		if (encoder)
+			[aCoder encodeObject:encoder(obj) forKey:k];
+		else
+			[aCoder encodeObject:obj forKey:k];
+	}
 }
 
 - (id) initWithValue:(id)value isCopy:(BOOL)isCopy error:(NSError *)err handlerID:(NSData *)handlerID

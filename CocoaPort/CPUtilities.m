@@ -25,3 +25,7 @@ id CPAutorelease(id object)
 {
     return [object autorelease];
 }
+
+id CPRetain(id object) {
+	return [object retain];
+}
