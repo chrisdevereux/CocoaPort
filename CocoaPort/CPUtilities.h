@@ -10,3 +10,4 @@
 
 OBJC_EXPORT BOOL CPIsRetainingSelectorName(NSString* selName);
 OBJC_EXPORT id CPAutorelease(id object);
+OBJC_EXPORT id CPRetain(id object);

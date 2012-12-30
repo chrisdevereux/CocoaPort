@@ -101,17 +101,18 @@ static NSArray* methodSignatures;
 	NSMutableArray* args = [[NSMutableArray alloc] initWithCapacity:numArgs];
 	
 	for (NSUInteger i = 0 ; i < numArgs; i++) {
-		__unsafe_unretained id a;
+		__unsafe_unretained id a = nil;
 		[invocation getArgument:&a atIndex:i + 2];
 		[args addObject:a ?: [CPNilFuture futureWithPort:_port]];
 	}
     
     NSString* selName = NSStringFromSelector([invocation selector]);
-	
-	CPInvocationFuture* future = [CPInvocationFuture futureWithPort:_port
-                                                   targetExpression:self
-                                                       selectorName:selName
-                                                               args:args];
+
+	CPInvocationFuture* future = CPAutorelease(CPRetain([CPInvocationFuture futureWithPort:_port
+															targetExpression:self
+																selectorName:selName
+																		args:args]));
+
     if (CPIsRetainingSelectorName(selName)) {
         // Manual retain / release is needed here, otherwise when the caller
         // releases the future (as it should due to method name), refcount will be -1
@@ -120,7 +121,7 @@ static NSArray* methodSignatures;
             CFRetain((__bridge void*)future);
         }
     }
-    
+  
 	[invocation setReturnValue:&future];
 }
 
@@ -145,7 +146,7 @@ static NSArray* methodSignatures;
 
 + (id) futureWithPort:(CPPort*)port target:(NSData*)target
 {
-	CPRemoteReferenceFuture* future = [super futureWithPort:port];
+	CPRemoteReferenceFuture* future = [self futureWithPort:port];
 	future->_target = target;
 	
 	[port sendPortMessage:[[CPRetainReference alloc] initWithID:target]];
@@ -177,7 +178,7 @@ static NSArray* methodSignatures;
 
 + (id) futureWithPort:(CPPort*)port targetExpression:(id)target selectorName:(NSString*)selectorName args:(NSArray*)args
 {
-	CPInvocationFuture* future = [super futureWithPort:port];
+	CPInvocationFuture* future = [self futureWithPort:port];
 	future->_args = args;
 	future->_sel = selectorName;
 	future->_targetExpr = target;
