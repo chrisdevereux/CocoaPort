@@ -92,7 +92,6 @@
         [port1.rootObject setProperty:testObj];
         
         [port2 send:[port2.remote property] refResponse:^(id response, NSError *error) {
-            [response setValue:response forKey:response];
             // released...
         }];
         
@@ -110,7 +109,6 @@
         [port1.rootObject setProperty:testObj];
         
         [port2 send:[[port2.remote property] copy] refResponse:^(id response, NSError *error) {
-            [response setValue:response forKey:response];
             // released...
         }];
         
