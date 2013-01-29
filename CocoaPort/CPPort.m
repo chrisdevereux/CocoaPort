@@ -45,6 +45,7 @@
 @implementation CPPort {
 	id<CPConnection> _connection;
 	id _rootObject;
+    NSRecursiveLock *_lock;
 	
 	CPReferenceMap* _referencedObjects;
 	CPReferenceMap* _responseHandlers;
@@ -77,6 +78,7 @@
 	_queue = queue ?: dispatch_get_current_queue();
 	dispatch_retain(_queue);
 	
+    _lock = [[NSRecursiveLock alloc] init];
 	_observationManager = [[CPObservationManager alloc] init];
     _releaseList = [[NSMutableArray alloc] init];
 	
@@ -450,11 +452,13 @@
 
 - (void) performBlock:(dispatch_block_t)block
 {
-	if (dispatch_get_current_queue() == _queue) {
-		block();
-	} else {
-		dispatch_sync(_queue, block);
-	}
+    [_lock lock];
+    @try {
+        block();
+    }
+    @finally {
+        [_lock unlock];
+    }
 }
 
 
