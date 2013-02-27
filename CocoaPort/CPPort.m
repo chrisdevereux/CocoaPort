@@ -52,6 +52,7 @@
 	CPObservationManager* _observationManager;
 	
     NSMutableArray* _releaseList;
+    NSRecursiveLock* _lock;
 	dispatch_queue_t _queue;
 	
 	struct {
@@ -75,6 +76,8 @@
 		return nil;
     
 	_queue = queue ?: dispatch_get_current_queue();
+    _lock = [[NSRecursiveLock alloc] init];
+    
 	dispatch_retain(_queue);
 	
 	_observationManager = [[CPObservationManager alloc] init];
@@ -450,11 +453,13 @@
 
 - (void) performBlock:(dispatch_block_t)block
 {
-	if (dispatch_get_current_queue() == _queue) {
-		block();
-	} else {
-		dispatch_sync(_queue, block);
-	}
+    [_lock lock];
+    @try {
+        block();
+    }
+    @finally {
+        [_lock unlock];
+    }
 }
 
 
