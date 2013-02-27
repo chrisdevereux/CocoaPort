@@ -20,6 +20,8 @@
 		618699CC15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		618699D015C75BFD008BBD84 /* CPSentReferencePlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */; };
 		618699D115C75BFD008BBD84 /* CPSentReferencePlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */; };
+		6188509A16DEC125009B412E /* TestCPSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6188509216DEC117009B412E /* TestCPSocketConnection.m */; };
+		6188509B16DEC126009B412E /* TestCPSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6188509216DEC117009B412E /* TestCPSocketConnection.m */; };
 		618F8F661624411B000837E5 /* CPInAppConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 618F8F641624411B000837E5 /* CPInAppConnection.h */; };
 		618F8F671624411B000837E5 /* CPInAppConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F651624411B000837E5 /* CPInAppConnection.m */; };
 		618F8F681624411B000837E5 /* CPInAppConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F8F651624411B000837E5 /* CPInAppConnection.m */; };
@@ -195,6 +197,7 @@
 		618699CA15C75A64008BBD84 /* CPPort+RPUnarchiverDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPPort+RPUnarchiverDelegate.m"; sourceTree = "<group>"; };
 		618699CE15C75BFC008BBD84 /* CPSentReferencePlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSentReferencePlaceholder.h; sourceTree = "<group>"; };
 		618699CF15C75BFC008BBD84 /* CPSentReferencePlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSentReferencePlaceholder.m; sourceTree = "<group>"; };
+		6188509216DEC117009B412E /* TestCPSocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCPSocketConnection.m; sourceTree = "<group>"; };
 		618F8F5E1624281A000837E5 /* CPRetainReleaseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPRetainReleaseMessage.h; sourceTree = "<group>"; };
 		618F8F5F1624281A000837E5 /* CPRetainReleaseMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPRetainReleaseMessage.m; sourceTree = "<group>"; };
 		618F8F641624411B000837E5 /* CPInAppConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPInAppConnection.h; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 				618F8F6B16244350000837E5 /* TestRetainRelease.m */,
 				61B96E4116DDAAB00030A04E /* TestCPPort.m */,
 				618F8F7816244B76000837E5 /* Supporting Files */,
+				6188509216DEC117009B412E /* TestCPSocketConnection.m */,
 			);
 			path = CocoaPortTests;
 			sourceTree = "<group>";
@@ -849,6 +853,7 @@
 			files = (
 				618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */,
 				61B96E4216DDAAB00030A04E /* TestCPPort.m in Sources */,
+				6188509A16DEC125009B412E /* TestCPSocketConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +888,7 @@
 			files = (
 				61F8EFF0169104D9000D6A4A /* TestRetainRelease.m in Sources */,
 				61B96E4316DDAAB00030A04E /* TestCPPort.m in Sources */,
+				6188509B16DEC126009B412E /* TestCPSocketConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

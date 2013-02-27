@@ -11,6 +11,7 @@
 
 @interface TestCPPortConnectedState : SenTestCase {
     CPPort* _port;
+    id<CPPortDelegate> _delegate;
     id<CPConnection> _connection;
 }
 
@@ -22,7 +23,9 @@
 {
     _port = [[CPPort alloc] init];
     _connection = mock([CPSocketConnection class]);
+    _delegate = mockProtocol(@protocol(CPPortDelegate));
     
+    _port.delegate = _delegate;
     [_port connect:_connection];
 }
 
@@ -32,10 +35,22 @@
     _connection = nil;
 }
 
-- (void)testPortPropagatesDisconnection
+- (void)testOnDisconnectPortPropagatesDisconnection
 {
     [_port disconnect];
     [verify(_connection) disconnect];
+}
+
+- (void)testOnDisconnectPortErrorsOutstandingRequests
+{
+    __block NSError *errorReceived;
+    
+    [_port send:[_port.remote allObjects] copyResponse:^(id response, NSError *error) {
+        errorReceived = error;
+    }];
+    
+    [_port disconnect];
+    assertThat(errorReceived, notNilValue());
 }
 
 @end

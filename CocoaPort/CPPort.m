@@ -429,15 +429,9 @@
 	if (!_connection)
 		return;
 	
-	[_connection setPort:nil];
-	_connection = nil;
-	
 	[_responseHandlers enumerateObjectsUsingBlock:^(NSData* uid, CPResponseHandler h){
 		h(nil, [NSError errorWithDomain:CPPortErrorDomain code:kCPPortConnectionClosed userInfo:nil]);
 	}];
-	
-	_referencedObjects = nil;
-	_responseHandlers = nil;
 	
 	[_observationManager removeAllObservers];
 	[_releaseList removeAllObjects];
@@ -449,6 +443,10 @@
 	if (notifyConnection) {
 		[_connection disconnect];
 	}
+    
+	_referencedObjects = nil;
+	_responseHandlers = nil;
+	_connection = nil;
 }
 
 - (void) performBlock:(dispatch_block_t)block

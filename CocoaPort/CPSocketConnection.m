@@ -183,7 +183,7 @@ enum {
 	[_port connectionDidClose:self];
 	
 	@synchronized(self) {
-		[_socket setDelegate:nil];
+		[_socket synchronouslySetDelegate:nil];
 		[_socket disconnect];
 		
 		_port = nil;
