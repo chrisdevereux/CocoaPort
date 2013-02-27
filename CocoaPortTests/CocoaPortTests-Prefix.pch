@@ -4,4 +4,11 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <SenTestingKit/SenTestingKit.h>
+
+    #define HC_SHORTHAND
+    #import <OCHamcrest/OCHamcrest.h>
+
+    #define MOCKITO_SHORTHAND
+    #import <OCMockito/OCMockito.h>
 #endif

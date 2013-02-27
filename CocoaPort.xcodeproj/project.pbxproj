@@ -53,6 +53,10 @@
 		619E8C7315F6A0FA00AFA249 /* CPReferenceMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */; };
 		619FE8DF15F23DAA003FF849 /* CPCodingObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 619FE8DD15F23DAA003FF849 /* CPCodingObject.h */; };
 		619FE8E015F23DAA003FF849 /* CPCodingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 619FE8DE15F23DAA003FF849 /* CPCodingObject.m */; };
+		61B96E4216DDAAB00030A04E /* TestCPPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B96E4116DDAAB00030A04E /* TestCPPort.m */; };
+		61B96E4316DDAAB00030A04E /* TestCPPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B96E4116DDAAB00030A04E /* TestCPPort.m */; };
+		61B96E6716DDCAA80030A04E /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B96E5116DDCA890030A04E /* OCHamcrest.framework */; };
+		61B96E6816DDCAA80030A04E /* OCMockito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B96E6016DDCA940030A04E /* OCMockito.framework */; };
 		61F8EFDF1691048C000D6A4A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61977001157CE9B000788469 /* SenTestingKit.framework */; };
 		61F8EFE11691048C000D6A4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F8EFE01691048C000D6A4A /* UIKit.framework */; };
 		61F8EFE21691048C000D6A4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FCB6E016130C990056B5A4 /* Foundation.framework */; };
@@ -87,6 +91,76 @@
 			proxyType = 1;
 			remoteGlobalIDString = 61976FEB157CE9B000788469;
 			remoteInfo = "CocoaPort-MacOS";
+		};
+		61B96E5016DDCA890030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 087601E213440806001B439B;
+			remoteInfo = OCHamcrest;
+		};
+		61B96E5216DDCA890030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 087601F713440807001B439B;
+			remoteInfo = OCHamcrestTests;
+		};
+		61B96E5416DDCA890030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 081BEE621345979F003F846A;
+			remoteInfo = libochamcrest;
+		};
+		61B96E5616DDCA890030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 081BEE6C1345979F003F846A;
+			remoteInfo = libochamcrestTests;
+		};
+		61B96E5F16DDCA940030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 08BDD5A91350C59C00E5A443;
+			remoteInfo = OCMockito;
+		};
+		61B96E6116DDCA940030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 08BDD5BE1350C59C00E5A443;
+			remoteInfo = OCMockitoTests;
+		};
+		61B96E6316DDCA940030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 085D2FF51351254000EBBE91;
+			remoteInfo = libocmockito;
+		};
+		61B96E6516DDCA940030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 085D2FFF1351254000EBBE91;
+			remoteInfo = libocmockitoTests;
+		};
+		61B96E6916DDCAB00030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 087601E113440806001B439B;
+			remoteInfo = OCHamcrest;
+		};
+		61B96E6B16DDCAB00030A04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 08BDD5A81350C59C00E5A443;
+			remoteInfo = OCMockito;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -127,8 +201,7 @@
 		618F8F651624411B000837E5 /* CPInAppConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPInAppConnection.m; sourceTree = "<group>"; };
 		618F8F6A16244350000837E5 /* TestRetainRelease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRetainRelease.h; sourceTree = "<group>"; };
 		618F8F6B16244350000837E5 /* TestRetainRelease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRetainRelease.m; sourceTree = "<group>"; };
-		618F8F6D16244683000837E5 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Vendor/OCMock/OSX/OCMock.framework; sourceTree = "<group>"; };
-		618F8F7416244B76000837E5 /* CocoaPortTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPortTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		618F8F7416244B76000837E5 /* CocoaPortTests-MacOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CocoaPortTests-MacOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		618F8F7916244B76000837E5 /* CocoaPortTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPortTests-Info.plist"; sourceTree = "<group>"; };
 		618F8F7B16244B76000837E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		618F8F8016244B76000837E5 /* CocoaPortTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPortTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -164,6 +237,9 @@
 		619E8C7115F6A0FA00AFA249 /* CPReferenceMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPReferenceMap.m; sourceTree = "<group>"; };
 		619FE8DD15F23DAA003FF849 /* CPCodingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCodingObject.h; sourceTree = "<group>"; };
 		619FE8DE15F23DAA003FF849 /* CPCodingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCodingObject.m; sourceTree = "<group>"; };
+		61B96E4116DDAAB00030A04E /* TestCPPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCPPort.m; sourceTree = "<group>"; };
+		61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = External/OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = "<group>"; };
+		61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMockito.xcodeproj; path = External/OCMockito/Source/OCMockito.xcodeproj; sourceTree = "<group>"; };
 		61F8EFDE1691048C000D6A4A /* CocoaPortTests-iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CocoaPortTests-iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F8EFE01691048C000D6A4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		61F8EFE51691048C000D6A4A /* CocoaPortTests-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPortTests-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -181,6 +257,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B96E6716DDCAA80030A04E /* OCHamcrest.framework in Frameworks */,
+				61B96E6816DDCAA80030A04E /* OCMockito.framework in Frameworks */,
 				618F8F8A16245E59000837E5 /* Security.framework in Frameworks */,
 				618F8F7516244B76000837E5 /* SenTestingKit.framework in Frameworks */,
 				618F8F7616244B76000837E5 /* Cocoa.framework in Frameworks */,
@@ -258,6 +336,7 @@
 			children = (
 				618F8F6A16244350000837E5 /* TestRetainRelease.h */,
 				618F8F6B16244350000837E5 /* TestRetainRelease.m */,
+				61B96E4116DDAAB00030A04E /* TestCPPort.m */,
 				618F8F7816244B76000837E5 /* Supporting Files */,
 			);
 			path = CocoaPortTests;
@@ -276,7 +355,7 @@
 		61976FE1157CE9B000788469 = {
 			isa = PBXGroup;
 			children = (
-				618F8F8916245E59000837E5 /* Security.framework */,
+				61B96E4816DDCA690030A04E /* Dependencies */,
 				61976FF5157CE9B000788469 /* CocoaPort */,
 				61FCB6E216130C990056B5A4 /* CocoaPort-iOS */,
 				618F8F7716244B76000837E5 /* CocoaPortTests */,
@@ -291,7 +370,7 @@
 			children = (
 				61976FEC157CE9B000788469 /* libCocoaPort-MacOS.a */,
 				61FCB6DF16130C990056B5A4 /* libCocoaPort-iOS.a */,
-				618F8F7416244B76000837E5 /* CocoaPortTests.octest */,
+				618F8F7416244B76000837E5 /* CocoaPortTests-MacOS.octest */,
 				61F8EFDE1691048C000D6A4A /* CocoaPortTests-iOS.octest */,
 			);
 			name = Products;
@@ -300,7 +379,7 @@
 		61976FEE157CE9B000788469 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				618F8F6D16244683000837E5 /* OCMock.framework */,
+				618F8F8916245E59000837E5 /* Security.framework */,
 				61976FEF157CE9B000788469 /* Cocoa.framework */,
 				61977001157CE9B000788469 /* SenTestingKit.framework */,
 				61FCB6E016130C990056B5A4 /* Foundation.framework */,
@@ -415,6 +494,37 @@
 			name = KVO;
 			sourceTree = "<group>";
 		};
+		61B96E4816DDCA690030A04E /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */,
+				61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		61B96E4A16DDCA890030A04E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61B96E5116DDCA890030A04E /* OCHamcrest.framework */,
+				61B96E5316DDCA890030A04E /* OCHamcrestTests.octest */,
+				61B96E5516DDCA890030A04E /* libochamcrest.a */,
+				61B96E5716DDCA890030A04E /* libochamcrestTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61B96E5916DDCA940030A04E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61B96E6016DDCA940030A04E /* OCMockito.framework */,
+				61B96E6216DDCA940030A04E /* OCMockitoTests.octest */,
+				61B96E6416DDCA940030A04E /* libocmockito.a */,
+				61B96E6616DDCA940030A04E /* libocmockitoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		61F8EFE31691048C000D6A4A /* CocoaPortTests-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,11 +606,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				61B96E6A16DDCAB00030A04E /* PBXTargetDependency */,
+				61B96E6C16DDCAB00030A04E /* PBXTargetDependency */,
 				618F8F8716244BC3000837E5 /* PBXTargetDependency */,
 			);
 			name = "CocoaPortTests-MacOS";
 			productName = CocoaPortTests;
-			productReference = 618F8F7416244B76000837E5 /* CocoaPortTests.octest */;
+			productReference = 618F8F7416244B76000837E5 /* CocoaPortTests-MacOS.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		61976FEB157CE9B000788469 /* CocoaPort-MacOS */ = {
@@ -576,6 +688,16 @@
 			mainGroup = 61976FE1157CE9B000788469;
 			productRefGroup = 61976FED157CE9B000788469 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 61B96E4A16DDCA890030A04E /* Products */;
+					ProjectRef = 61B96E4916DDCA890030A04E /* OCHamcrest.xcodeproj */;
+				},
+				{
+					ProductGroup = 61B96E5916DDCA940030A04E /* Products */;
+					ProjectRef = 61B96E5816DDCA940030A04E /* OCMockito.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				61976FEB157CE9B000788469 /* CocoaPort-MacOS */,
@@ -585,6 +707,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		61B96E5116DDCA890030A04E /* OCHamcrest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCHamcrest.framework;
+			remoteRef = 61B96E5016DDCA890030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E5316DDCA890030A04E /* OCHamcrestTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCHamcrestTests.octest;
+			remoteRef = 61B96E5216DDCA890030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E5516DDCA890030A04E /* libochamcrest.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libochamcrest.a;
+			remoteRef = 61B96E5416DDCA890030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E5716DDCA890030A04E /* libochamcrestTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libochamcrestTests.octest;
+			remoteRef = 61B96E5616DDCA890030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E6016DDCA940030A04E /* OCMockito.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCMockito.framework;
+			remoteRef = 61B96E5F16DDCA940030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E6216DDCA940030A04E /* OCMockitoTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCMockitoTests.octest;
+			remoteRef = 61B96E6116DDCA940030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E6416DDCA940030A04E /* libocmockito.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libocmockito.a;
+			remoteRef = 61B96E6316DDCA940030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61B96E6616DDCA940030A04E /* libocmockitoTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libocmockitoTests.octest;
+			remoteRef = 61B96E6516DDCA940030A04E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		618F8F7116244B76000837E5 /* Resources */ = {
@@ -667,6 +848,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */,
+				61B96E4216DDAAB00030A04E /* TestCPPort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61F8EFF0169104D9000D6A4A /* TestRetainRelease.m in Sources */,
+				61B96E4316DDAAB00030A04E /* TestCPPort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +919,16 @@
 			target = 61976FEB157CE9B000788469 /* CocoaPort-MacOS */;
 			targetProxy = 618F8F8616244BC3000837E5 /* PBXContainerItemProxy */;
 		};
+		61B96E6A16DDCAB00030A04E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCHamcrest;
+			targetProxy = 61B96E6916DDCAB00030A04E /* PBXContainerItemProxy */;
+		};
+		61B96E6C16DDCAB00030A04E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCMockito;
+			targetProxy = 61B96E6B16DDCAB00030A04E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -766,10 +959,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/Vendor/OCMock/OSX\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPortTests/CocoaPortTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
@@ -787,10 +977,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/Vendor/OCMock/OSX\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPortTests/CocoaPortTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPortTests/CocoaPortTests-Info.plist";
@@ -898,6 +1085,10 @@
 				GCC_PREFIX_HEADER = "CocoaPortTests-iOS/CocoaPortTests-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPortTests-iOS/CocoaPortTests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/OCMock/iOS\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
@@ -919,6 +1110,10 @@
 				GCC_PREFIX_HEADER = "CocoaPortTests-iOS/CocoaPortTests-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPortTests-iOS/CocoaPortTests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/OCMock/iOS\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1005,6 +1200,7 @@
 				61F8EFEF1691048C000D6A4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61FCB6E916130C990056B5A4 /* Build configuration list for PBXNativeTarget "CocoaPort-iOS" */ = {
 			isa = XCConfigurationList;
