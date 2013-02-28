@@ -340,8 +340,8 @@
 				618F8F6A16244350000837E5 /* TestRetainRelease.h */,
 				618F8F6B16244350000837E5 /* TestRetainRelease.m */,
 				61B96E4116DDAAB00030A04E /* TestCPPort.m */,
-				618F8F7816244B76000837E5 /* Supporting Files */,
 				6188509216DEC117009B412E /* TestCPSocketConnection.m */,
+				618F8F7816244B76000837E5 /* Supporting Files */,
 			);
 			path = CocoaPortTests;
 			sourceTree = "<group>";

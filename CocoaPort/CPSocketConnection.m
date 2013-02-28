@@ -178,20 +178,30 @@ enum {
 	[_socket writeData:data withTimeout:-1 tag:-1];
 }
 
-- (void) disconnect
+- (void)disconnect
 {
-	[_port connectionDidClose:self];
-	
+    [self disconnect:NO];
+}
+
+- (void)disconnect:(BOOL)notifyPort
+{	
 	@synchronized(self) {
 		[_socket synchronouslySetDelegate:nil];
 		[_socket disconnect];
+        
+        if (notifyPort) {
+            [_port connectionDidClose:self];
+        }
+        
+        if (_delegateHas.didDisconnect) {
+            [_delegate connectionDidDisconnect:self];
+        }
 		
 		_port = nil;
 		_socket = nil;
 		_delegate = nil;
 	}
 }
-
 
 
 #pragma mark - As a CGDAsyncSocketDelegate:
@@ -260,12 +270,8 @@ enum {
 	if (!connectionClosed && _delegateHas.raiseError) {
 		[_delegate connection:self didRaiseError:err];
 	}
-	
-	if (_delegateHas.didDisconnect) {
-		[_delegate connectionDidDisconnect:self];
-	}
-	
-	[self disconnect];
+    
+    [self disconnect:YES];
 }
 
 
@@ -282,7 +288,7 @@ enum {
 		[_delegate connection:self didRaiseError:err];
 	}
 	
-	[self disconnect];
+	[self disconnect:YES];
 }
 				
 @end
