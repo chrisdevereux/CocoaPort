@@ -67,6 +67,7 @@ static id KeyForObjectAndKeypath(id object, NSString* keypath)
 	@synchronized(self){
         observed = [_objectKeypathMapped allValues];
         [_objectKeypathMapped removeAllObjects];
+        [_uidMapped removeAllObjects];
 	}
     
     for (CPObservationInfo* info in observed) {

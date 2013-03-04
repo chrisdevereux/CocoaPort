@@ -8,9 +8,11 @@
 
 #import "CPPort.h"
 #import "CPSocketConnection.h"
+#import "CPObservationManager.h"
 
 @interface TestCPPortConnectedState : SenTestCase {
     CPPort* _port;
+    CPObservationManager *_observationManager;
     id<CPPortDelegate> _delegate;
     id<CPConnection> _connection;
 }
@@ -22,10 +24,14 @@
 - (void)setUp
 {
     _port = [[CPPort alloc] init];
-    _connection = mock([CPSocketConnection class]);
-    _delegate = mockProtocol(@protocol(CPPortDelegate));
     
+    _observationManager = mock([CPObservationManager class]);
+    [_port setValue:_observationManager forKey:@"observationManager"];
+    
+    _delegate = mockProtocol(@protocol(CPPortDelegate));
     _port.delegate = _delegate;
+    
+    _connection = mock([CPSocketConnection class]);
     [_port connect:_connection];
 }
 
@@ -39,6 +45,12 @@
 {
     [_port disconnect];
     [verify(_connection) disconnect];
+}
+
+- (void)testOnDisconnectPortFlushesAllObservers
+{
+    [_port disconnect];
+    [verify(_observationManager) removeAllObservers];
 }
 
 - (void)testOnDisconnectPortErrorsOutstandingRequests

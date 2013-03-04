@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6105E75B1602C6F600D0E8DA /* CPNilPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6105E7591602C6F500D0E8DA /* CPNilPlaceholder.h */; };
 		6105E75C1602C6F600D0E8DA /* CPNilPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6105E75A1602C6F500D0E8DA /* CPNilPlaceholder.m */; };
+		610699C916E4176C00FC6E32 /* TestCPObservationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 610699C116E4175800FC6E32 /* TestCPObservationManager.m */; };
+		610699CA16E4176C00FC6E32 /* TestCPObservationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 610699C116E4175800FC6E32 /* TestCPObservationManager.m */; };
 		61329DCF15F176BA00E5E43C /* CPSocketConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 61329DCD15F176BA00E5E43C /* CPSocketConnection.h */; };
 		61329DD015F176BA00E5E43C /* CPSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 61329DCE15F176BA00E5E43C /* CPSocketConnection.m */; };
 		61329DD715F19F3800E5E43C /* CPSocketServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 61329DD515F19F3800E5E43C /* CPSocketServer.h */; };
@@ -181,6 +183,7 @@
 /* Begin PBXFileReference section */
 		6105E7591602C6F500D0E8DA /* CPNilPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNilPlaceholder.h; sourceTree = "<group>"; };
 		6105E75A1602C6F500D0E8DA /* CPNilPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNilPlaceholder.m; sourceTree = "<group>"; };
+		610699C116E4175800FC6E32 /* TestCPObservationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCPObservationManager.m; sourceTree = "<group>"; };
 		61329DCD15F176BA00E5E43C /* CPSocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSocketConnection.h; sourceTree = "<group>"; };
 		61329DCE15F176BA00E5E43C /* CPSocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSocketConnection.m; sourceTree = "<group>"; };
 		61329DD315F177BB00E5E43C /* CPPortMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CPPortMessage.h; path = CocoaPort/CPPortMessage.h; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 				61B96E4116DDAAB00030A04E /* TestCPPort.m */,
 				6188509216DEC117009B412E /* TestCPSocketConnection.m */,
 				618F8F7816244B76000837E5 /* Supporting Files */,
+				610699C116E4175800FC6E32 /* TestCPObservationManager.m */,
 			);
 			path = CocoaPortTests;
 			sourceTree = "<group>";
@@ -854,6 +858,7 @@
 				618F8F8416244B91000837E5 /* TestRetainRelease.m in Sources */,
 				61B96E4216DDAAB00030A04E /* TestCPPort.m in Sources */,
 				6188509A16DEC125009B412E /* TestCPSocketConnection.m in Sources */,
+				610699C916E4176C00FC6E32 /* TestCPObservationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +894,7 @@
 				61F8EFF0169104D9000D6A4A /* TestRetainRelease.m in Sources */,
 				61B96E4316DDAAB00030A04E /* TestCPPort.m in Sources */,
 				6188509B16DEC126009B412E /* TestCPSocketConnection.m in Sources */,
+				610699CA16E4176C00FC6E32 /* TestCPObservationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
