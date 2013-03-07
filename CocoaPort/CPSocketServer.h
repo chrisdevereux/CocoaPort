@@ -36,6 +36,10 @@
  and calls [SPSocketServerDelegate server:didEstablishConnection:].
  
  Delegate callbacks will be sent to the dispatch queue that this method is called from.
+ 
+ TODO:
+ CPSocketServer will accept currently accept all requested connections and does not require
+ that they are secured.
 */
 - (BOOL) listenForConnectionsOnPort:(uint16_t)inPort error:(NSError *__autoreleasing *)error;
 
