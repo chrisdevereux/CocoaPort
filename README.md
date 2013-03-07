@@ -118,8 +118,29 @@ Calling [CPPort remote] and sending messages to a future are two ways of getting
 - If a remote object is observed using KVO, changes can be sent as copies or references.
 
 
+Status
+------
+
+CocoaPort is functional but should be considered unfinished and not yet ready for use in production. However, if you are interested in using this in an application (and some people are), you are more than welcome to contribute and help it get to a production-ready state!
+
+Known issues:
+
+- The current API for CPSocketConnection does not enforce the use of SSL, or any alternative methods of verifying the authenticity of messages. At present, if used over a socket, the socket should at minimum be secured using SSL. This may not be suitable for certain applications, so the API should be improved to support alternative methods of message authentication (eg., via a security key).
+- Methods that take non-object types as arguments do not work.
+- Test coverage could be improved.
+
+
+Contributing
+------------
+
+Pull requests welcome! When contributing, please:
+
+* Make your changes on a branch.
+* Write tests that reproduce any bugs you have fixed / test the feature you've added.
+* Raise an issue suggesting the changes you want to make before doing any work to alter the API or change from current behaviour. 
+
+
 Licence
 -------
 
 CocoaPort is released under an MIT licence.
-
