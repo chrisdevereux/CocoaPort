@@ -22,6 +22,10 @@
 @class GCDAsyncSocket;
 @protocol CPSocketConnectionDelegate;
 
+/**
+ TODO: 
+*/
+
 @interface CPSocketConnection : NSObject <CPConnection>
 
 @property (unsafe_unretained, nonatomic) id<CPSocketConnectionDelegate> delegate;
@@ -34,11 +38,12 @@
  
  Callbacks from the connection will be made on the dispatch queue that this method
  is called from.
+ 
+ TODO: The created socket is not secured via SSL. This method should not be used unless
+ the connection's delegate provides a method of authenticating messages.
 */
 
-+ (void) connectToAddress:(NSData*)address
-				  timeout:(NSTimeInterval)timeout
-			  asyncResult:(void(^)(id connection, NSError*error))asyncResult;
++ (void) connectToAddress:(NSData*)address timeout:(NSTimeInterval)timeout asyncResult:(void(^)(id connection, NSError*error))asyncResult;
 
 
 /**
