@@ -1,5 +1,5 @@
-CocoaPort
-=========
+This project is no longer being developed.
+------------------------------------------
 
 CocoaPort is an asynchronous, futures-based distributed objects library for Objective-C.
 
@@ -120,8 +120,6 @@ Calling [CPPort remote] and sending messages to a future are two ways of getting
 
 Status
 ------
-
-CocoaPort is functional but should be considered unfinished and not yet ready for use in production. However, if you are interested in using this in an application (and some people are), you are more than welcome to contribute and help it get to a production-ready state!
 
 Known issues:
 
